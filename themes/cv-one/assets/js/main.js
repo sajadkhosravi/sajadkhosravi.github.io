@@ -83,24 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial call
     updateActiveNavLink();
 
-    // Typing animation for name (optional)
-    const nameElement = document.querySelector('.name');
-    if (nameElement) {
-        const nameText = nameElement.textContent;
-        nameElement.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < nameText.length) {
-                nameElement.textContent += nameText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Start typing animation after a short delay
-        setTimeout(typeWriter, 500);
-    }
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
