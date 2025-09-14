@@ -41,3 +41,4 @@ hugo server --buildDrafts --buildFuture
 Edit `data/cv.yaml` to update your personal information. Comment out any fields you want to hide from the website.
 
 Edit `hugo.toml` to configure site settings, social links, and section visibility.
+# Force rebuild
