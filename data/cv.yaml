@@ -1,0 +1,204 @@
+personal:
+  name: "Sajad Khosravi"
+  title: "PhD Student in Edge/Cloud Computing"
+  # email: "sajad.khosravi@liu.se"
+  location: "Linköping, Sweden"
+  # phone: "+46"
+  # website: "https://sajadkhosravi.github.io"
+  summary: "I am a PhD student at Linköping University, Sweden, working on adaptive software for the Edge-Cloud Continuum. My research focuses on Edge Computing, Cloud Computing, and Distributed Systems. I am particularly interested in how software can adapt dynamically to the unique challenges of edge and cloud infrastructures, enabling better performance, resource optimization, and scalability."
+
+research_interests:
+  - name: "Edge Computing and Edge-Cloud Integration"
+    icon: "fas fa-server"
+    description: "Research on integrating edge and cloud computing paradigms"
+  - name: "Cloud Computing"
+    icon: "fas fa-cloud"
+    description: "Distributed computing and cloud infrastructure research"
+  - name: "Distributed Systems"
+    icon: "fas fa-network-wired"
+    description: "Design and analysis of distributed computing systems"
+  - name: "Resource Allocation and Scheduling"
+    icon: "fas fa-tasks"
+    description: "Optimization algorithms for resource management"
+
+education:
+  - degree: "PhD in Computer Science"
+    institution: "Linköping University"
+    location: "Linköping, Sweden"
+    year: "Dec 2022 - Present"
+    thesis: "Adaptive software for the heterogeneous Edge-Cloud-Continuum"
+    supervisor: "Christoph Kessler"
+    
+  - degree: "MSc in Software Engineering"
+    institution: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    year: "Sep 2018 - Feb 2022"
+    thesis: "Machine Learning-Based computational offloading in Edge Computing"
+    supervisor: "Saeid Abrishami"
+    gpa: "16.63/20.0"
+    
+  - degree: "BSc in Software Engineering"
+    institution: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    year: "Sep2014 - Sep 2018"
+    final_project: "Health care IoT devices and applications"
+    gpa: "16.22/20.0"
+
+experience:
+  - title: "PhD Student"
+    organization: "Linköping University"
+    location: "Linköping, Sweden"
+    period: "Dec 2022 - Present"
+
+  - title: "Software Engineer"
+    organization: "Part Company"
+    location: "Mashhad, Iran"
+    period: "Jun 2022 - Oct 2022"
+    
+  - title: "Software Engineer"
+    organization: "Paykan Company"
+    location: "Mashhad, Iran"
+    period: "Oct 2021 - Oct 2022"
+
+  - title: "Software Engineer"
+    organization: "Part Company"
+    location: "Mashhad, Iran"
+    period: "Nov 2018 - Aug 2020"
+  
+  - title: "Software Engineer"
+    organization: "Cycass Company"
+    location: "Mashhad, Iran"
+    period: "Jun 2018 - Nov 2018"
+
+  - title: "Research Assistant"
+    organization: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    period: "Sep 2018 - May 2022"
+
+  - title: "Managing editor of Escape scientific magazine"
+    organization: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    period: "Jan 2016 - Jan 2018"
+
+publications:
+  # journal:
+  #   - title: "Edge-Cloud Resource Optimization: A Machine Learning Approach"
+  #     authors: "Your Name, Co-Author, Advisor Name"
+  #     journal: "IEEE Transactions on Cloud Computing"
+  #     year: "2024"
+  #     status: "Under Review"
+  #     doi: "10.1109/TCC.2024.xxxxx"
+  #     pdf: "papers/sample-paper.pdf"
+  #     code: "https://github.com/yourusername/edge-cloud-optimization"
+      
+  conference:
+    - title: "Energy-Efficient Scheduling of Moldable Streaming Computations for the Edge-Cloud Continuum"
+      authors: "Sajad Khosravi; Christoph Kessler; Sebastian Litzinger; Jörg Keller"
+      conference: "9th International Conference on Fog and Mobile Edge Computing (FMEC)"
+      year: "2024"
+      # pages: "123-136"
+      doi: "10.1109/FMEC62297.2024.10710310"
+      # pdf: "https://ieeexplore.ieee.org/abstract/document/10710310"
+      # code: "https://github.com/yourusername/distributed-ml-edge"
+      # award: "Best Paper Award"
+      
+  # preprint:
+  #   - title: "Federated Learning at the Edge: A Comprehensive Survey"
+  #     authors: "Your Name, Co-Author, Advisor Name"
+  #     journal: "arXiv preprint"
+  #     year: "2024"
+  #     arxiv: "2401.12345"
+  #     pdf: "papers/sample-paper.pdf"
+
+teaching:
+  - course: "CS 301: Data Structures and Algorithms"
+    institution: "University Name"
+    period: "Fall 2023, Spring 2024"
+    role: "Teaching Assistant"
+    description: "Assisted in teaching fundamental data structures and algorithm design principles to 80+ undergraduate students."
+    responsibilities:
+      - "Led weekly discussion sections"
+      - "Graded assignments and exams"
+      - "Held office hours and provided tutoring"
+      
+  - course: "CS 401: Distributed Systems"
+    institution: "University Name"
+    period: "Fall 2022"
+    role: "Teaching Assistant"
+    description: "Supported instruction in distributed systems concepts including consistency, replication, and fault tolerance."
+    responsibilities:
+      - "Developed lab exercises"
+      - "Mentored student projects"
+      - "Provided technical support"
+
+supervision:
+  - name: "Jane Smith"
+    level: "Undergraduate Research Assistant"
+    period: "2023 - Present"
+    project: "Edge Computing Resource Optimization"
+    status: "Ongoing"
+    description: "Mentoring undergraduate student in developing machine learning models for edge resource allocation."
+    
+  - name: "John Doe"
+    level: "Master's Thesis Student"
+    period: "2022 - 2023"
+    project: "5G Network Slicing Optimization"
+    status: "Completed"
+    description: "Co-supervised master's thesis on 5G network slicing algorithms. Student graduated with distinction."
+    
+  - name: "Alice Johnson"
+    level: "Undergraduate Research Assistant"
+    period: "2021 - 2022"
+    project: "IoT Data Processing at the Edge"
+    status: "Completed"
+    description: "Supervised research project on efficient data processing techniques for IoT applications in edge environments."
+
+awards:
+  - title: "Best Paper Award"
+    organization: "9th International Conference on Fog and Mobile Edge Computing (FMEC)"
+    year: "2024"
+    description: "Awarded for the paper 'Energy-Efficient Scheduling of Moldable Streaming Computations for the Edge-Cloud Continuum'"
+    
+  - title: "PhD Scholarship"
+    organization: "Linköping University"
+    year: "2022-2026"
+    description: "Full PhD scholarship for research in Edge-Cloud Computing"
+    
+  - title: "Outstanding Graduate Student"
+    organization: "Ferdowsi University of Mashhad"
+    year: "2022"
+    description: "Recognized for academic excellence and research contributions during Master's studies"
+    
+  - title: "Managing Editor Recognition"
+    organization: "Escape Scientific Magazine"
+    year: "2018"
+    description: "Awarded for outstanding editorial work and scientific communication"
+
+skills:
+  technical:
+    - "Programming: Python, Java, C++, JavaScript"
+    # - "Cloud Platforms: AWS, Azure, Google Cloud Platform"
+    - "Containerization: Docker, Kubernetes"
+    # - "ML/AI: TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy"
+    - "Databases: PostgreSQL, MongoDB, Redis, MySQL"
+    # - "Tools: Git"
+    # - "Frameworks: Django, Node.js, Spring"
+    - "Simulation: Ifogsim, CloudSim"
+  
+  research:
+    - "Edge Computing & Cloud Systems"
+    - "Distributed Systems"
+    - "Resource Allocation & Scheduling"
+    - "Energy-Efficient Computing"
+    - "Performance Evaluation & Benchmarking"
+    - "System Architecture Design"
+    - "Computational Offloading"
+    - "Edge-Cloud Continuum"
+
+languages:
+  - language: "Persian (Farsi)"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Fluent"
+  - language: "Swedish"
+    proficiency: "Basic"

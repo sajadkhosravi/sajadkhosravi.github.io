@@ -1,0 +1,506 @@
+/* Print-specific styles for CV */
+
+@media print {
+  /* Reset margins and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Hide navigation and footer */
+  .nav,
+  .footer,
+  .social-links,
+  .publication-links,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Main content adjustments */
+  .main {
+    margin-top: 0 !important;
+  }
+
+  .cv-container {
+    max-width: none;
+    padding: 0;
+  }
+
+  /* Section styling */
+  .section {
+    margin-bottom: 20pt;
+    padding: 10pt 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    font-size: 16pt;
+    color: #000;
+    margin-bottom: 15pt;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 5pt;
+  }
+
+  .section-title::after {
+    display: none;
+  }
+
+  /* About section */
+  .about-section {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 15pt;
+    margin: 10pt 0;
+  }
+
+  .about-grid {
+    display: block;
+  }
+
+  .name {
+    font-size: 20pt;
+    color: #000;
+    margin-bottom: 5pt;
+  }
+
+  .title {
+    font-size: 14pt;
+    color: #000;
+    margin-bottom: 10pt;
+  }
+
+  .summary {
+    font-size: 11pt;
+    color: #000;
+    margin-bottom: 15pt;
+  }
+
+  .contact-info {
+    margin-bottom: 15pt;
+  }
+
+  .contact-item {
+    margin-bottom: 5pt;
+  }
+
+  .contact-item i {
+    display: none;
+  }
+
+  .contact-link,
+  .contact-text {
+    color: #000;
+  }
+
+  .about-photo {
+    text-align: center;
+    margin: 10pt 0;
+  }
+
+  .profile-photo {
+    width: 120pt;
+    height: 120pt;
+    border: 2pt solid #000;
+  }
+
+  /* Research interests */
+  .interests-grid {
+    display: block;
+  }
+
+  .interest-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 5pt;
+    break-inside: avoid;
+  }
+
+  .interest-item i {
+    display: none;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    margin-bottom: 15pt;
+    break-inside: avoid;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+
+  .timeline-content {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 10pt;
+  }
+
+  .timeline-title {
+    font-size: 13pt;
+    color: #000;
+    margin-bottom: 5pt;
+  }
+
+  .timeline-subtitle {
+    font-size: 12pt;
+    color: #000;
+    margin-bottom: 3pt;
+  }
+
+  .timeline-location {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 3pt;
+  }
+
+  .timeline-period {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 8pt;
+  }
+
+  .timeline-description {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 8pt;
+  }
+
+  .achievements-list {
+    margin-top: 8pt;
+  }
+
+  .achievement-item {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 3pt;
+  }
+
+  .achievement-item::before {
+    content: '•';
+    color: #000;
+  }
+
+  /* Publications */
+  .publication-category {
+    margin-bottom: 15pt;
+  }
+
+  .category-title {
+    font-size: 14pt;
+    color: #000;
+    margin-bottom: 10pt;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 3pt;
+  }
+
+  .publication-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+  }
+
+  .publication-title {
+    font-size: 11pt;
+    color: #000;
+    margin-bottom: 3pt;
+    font-weight: bold;
+  }
+
+  .publication-authors {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 2pt;
+  }
+
+  .publication-venue {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+  }
+
+  .publication-status,
+  .publication-award {
+    display: inline-block;
+    padding: 2pt 4pt;
+    border: 1pt solid #000;
+    font-size: 8pt;
+    margin-bottom: 5pt;
+    background: #f0f0f0;
+  }
+
+  /* Teaching */
+  .teaching-grid {
+    display: block;
+  }
+
+  .teaching-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+  }
+
+  .teaching-course {
+    font-size: 12pt;
+    color: #000;
+    margin-bottom: 3pt;
+  }
+
+  .teaching-institution {
+    color: #000;
+    font-size: 11pt;
+    margin-bottom: 2pt;
+  }
+
+  .teaching-period {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 2pt;
+  }
+
+  .teaching-role {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+  }
+
+  .teaching-description {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+  }
+
+  .responsibilities-list {
+    margin-top: 5pt;
+  }
+
+  .responsibility-item {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 2pt;
+  }
+
+  .responsibility-item::before {
+    content: '•';
+    color: #000;
+  }
+
+  /* Supervision */
+  .supervision-grid {
+    display: block;
+  }
+
+  .supervision-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+  }
+
+  .supervision-name {
+    font-size: 12pt;
+    color: #000;
+    margin-bottom: 3pt;
+  }
+
+  .supervision-level {
+    color: #000;
+    font-size: 11pt;
+    margin-bottom: 2pt;
+  }
+
+  .supervision-period {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 2pt;
+  }
+
+  .supervision-project {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+  }
+
+  .supervision-status {
+    position: static;
+    display: inline-block;
+    padding: 2pt 4pt;
+    border: 1pt solid #000;
+    font-size: 8pt;
+    margin-bottom: 5pt;
+    background: #f0f0f0;
+  }
+
+  .supervision-description {
+    color: #000;
+    font-size: 10pt;
+    margin-top: 5pt;
+  }
+
+  /* Awards */
+  .awards-grid {
+    display: block;
+  }
+
+  .award-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+  }
+
+  .award-icon {
+    display: none;
+  }
+
+  .award-title {
+    font-size: 12pt;
+    color: #000;
+    margin-bottom: 3pt;
+    font-weight: bold;
+  }
+
+  .award-organization {
+    color: #000;
+    font-size: 11pt;
+    margin-bottom: 2pt;
+  }
+
+  .award-year {
+    color: #000;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+  }
+
+  .award-description {
+    color: #000;
+    font-size: 10pt;
+  }
+
+  /* Skills */
+  .skills-category {
+    margin-bottom: 15pt;
+  }
+
+  .skills-category .category-title {
+    font-size: 14pt;
+    color: #000;
+    margin-bottom: 10pt;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 3pt;
+  }
+
+  .skills-grid {
+    display: block;
+  }
+
+  .skill-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 6pt;
+    margin-bottom: 5pt;
+    break-inside: avoid;
+  }
+
+  .skill-item i {
+    display: none;
+  }
+
+  .skill-item span {
+    color: #000;
+    font-size: 10pt;
+  }
+
+  /* Languages */
+  .languages-grid {
+    display: block;
+  }
+
+  .language-item {
+    background: none !important;
+    border: 1pt solid #000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+  }
+
+  .language-name {
+    font-size: 12pt;
+    color: #000;
+    margin-bottom: 5pt;
+    font-weight: bold;
+  }
+
+  .language-proficiency {
+    display: block;
+  }
+
+  .proficiency-bar {
+    display: none;
+  }
+
+  .proficiency-text {
+    color: #000;
+    font-size: 10pt;
+    text-align: left;
+    min-width: auto;
+  }
+
+  /* Print button */
+  .print-button-container {
+    display: none !important;
+  }
+
+  /* Links */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .contact-link,
+  .pub-link {
+    color: #000 !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  /* Page breaks */
+  .section:nth-child(3n) {
+    page-break-before: auto;
+  }
+
+  /* Ensure proper spacing */
+  .cv-container > .section:first-child {
+    margin-top: 0;
+  }
+
+  .cv-container > .section:last-child {
+    margin-bottom: 0;
+  }
+}
+

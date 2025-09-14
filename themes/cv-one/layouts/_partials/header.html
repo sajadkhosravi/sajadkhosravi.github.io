@@ -1,0 +1,36 @@
+{{ if .Site.Params.show_nav }}
+<nav class="nav">
+    <div class="nav-container">
+        
+        <div class="nav-menu" id="nav-menu">
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <div class="nav-dropdown">
+                <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                <div class="nav-dropdown-content">
+                    {{ range .Children }}
+                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ else }}
+            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+            {{ end }}
+            {{ end }}
+            
+            {{ if .Site.Params.download_cv.enabled }}
+            <a href="{{ .Site.Params.download_cv.pdf_path | default "/cv.pdf" }}" class="nav-link download-cv" download>
+                <i class="fas fa-download"></i>
+                {{ .Site.Params.download_cv.button_text | default "Download CV" }}
+            </a>
+            {{ end }}
+        </div>
+        
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </div>
+    </div>
+</nav>
+{{ end }}

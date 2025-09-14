@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{- if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{- end }}
+{{- if .Site.Params.author }}
+<meta name="author" content="{{ .Site.Params.author }}">
+{{- end }}
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- CSS -->
+{{ partial "head/css.html" . }}
+
+<!-- Title -->
+<title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+<!-- Open Graph -->
+{{- if .Site.Params.description }}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+{{- end }}
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
+{{- if .Site.Params.description }}
+<meta name="twitter:description" content="{{ .Site.Params.description }}">
+{{- end }}
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- RSS -->
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+
+<!-- JSON Feed -->
+{{ if .OutputFormats.Get "json" -}}
+<link rel="alternate" type="application/json" title="{{ .Site.Title }}" href="{{ .OutputFormats.Get "json" | relURL }}">
+{{ end -}}

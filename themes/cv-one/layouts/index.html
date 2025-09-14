@@ -1,0 +1,422 @@
+{{ define "main" }}
+<article class="cv-container">
+    <!-- Print Button -->
+    {{ if .Site.Params.print.enabled }}
+    <div class="print-button-container">
+        <button id="print-button" class="print-button" aria-label="Download PDF">
+            <i class="{{ .Site.Params.print.button_icon }}" aria-hidden="true"></i>
+            {{ .Site.Params.print.button_text }}
+        </button>
+    </div>
+    {{ end }}
+
+    <!-- About Section -->
+    {{ if .Site.Params.sections.about }}
+    <section id="about" class="section about-section">
+        <div class="section-content">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h1 class="name">{{ .Site.Data.cv.personal.name }}</h1>
+                    <h2 class="title">{{ .Site.Data.cv.personal.title }}</h2>
+                    <p class="summary">{{ .Site.Data.cv.personal.summary }}</p>
+                    
+                    <div class="contact-info">
+                        {{ if .Site.Data.cv.personal.email }}
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:{{ .Site.Data.cv.personal.email }}" class="contact-link">{{ .Site.Data.cv.personal.email }}</a>
+                        </div>
+                        {{ end }}
+                        {{ if .Site.Data.cv.personal.location }}
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span class="contact-text">{{ .Site.Data.cv.personal.location }}</span>
+                        </div>
+                        {{ end }}
+                        {{ if .Site.Data.cv.personal.phone }}
+                        <div class="contact-item">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:{{ .Site.Data.cv.personal.phone }}" class="contact-link">{{ .Site.Data.cv.personal.phone }}</a>
+                        </div>
+                        {{ end }}
+                        {{ if .Site.Data.cv.personal.website }}
+                        <div class="contact-item">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <a href="{{ .Site.Data.cv.personal.website }}" class="contact-link" target="_blank" rel="noopener">{{ .Site.Data.cv.personal.website }}</a>
+                        </div>
+                        {{ end }}
+                    </div>
+                    
+                    <div class="social-links">
+                        {{ if .Site.Params.social.github }}
+                        <a href="{{ .Site.Params.social.github }}" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.linkedin }}
+                        <a href="{{ .Site.Params.social.linkedin }}" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.scholar }}
+                        <a href="{{ .Site.Params.social.scholar }}" class="social-link" aria-label="Google Scholar" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.orcid }}
+                        <a href="{{ .Site.Params.social.orcid }}" class="social-link" aria-label="ORCID" target="_blank" rel="noopener">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.twitter }}
+                        <a href="{{ .Site.Params.social.twitter }}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.researchgate }}
+                        <a href="{{ .Site.Params.social.researchgate }}" class="social-link" aria-label="ResearchGate" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.dblp }}
+                        <a href="{{ .Site.Params.social.dblp }}" class="social-link" aria-label="DBLP" target="_blank" rel="noopener">
+                            <i class="fas fa-database"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.website }}
+                        <a href="{{ .Site.Params.social.website }}" class="social-link" aria-label="Website" target="_blank" rel="noopener">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        {{ end }}
+                        {{ if .Site.Params.social.email }}
+                        <a href="{{ .Site.Params.social.email }}" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                
+                {{ if .Site.Params.show_photo }}
+                <div class="about-photo">
+                    <img src="{{ .Site.Params.photo_path | default "/images/profile.svg" }}" 
+                         alt="Profile photo of {{ .Site.Data.cv.personal.name }}" 
+                         class="profile-photo">
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Research Interests Section -->
+    {{ if .Site.Params.sections.research }}
+    <section id="research" class="section research-section">
+        <div class="section-content">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="interests-grid">
+                {{ range .Site.Data.cv.research_interests }}
+                {{ if .name }}
+                <div class="interest-item">
+                    {{ if .icon }}
+                        <i class="{{ .icon }}" aria-hidden="true"></i>
+                    {{ else }}
+                        <i class="fas fa-microchip" aria-hidden="true"></i>
+                    {{ end }}
+                    <div class="interest-content">
+                        <span class="interest-name">{{ .name }}</span>
+                        {{ if .description }}
+                        <p class="interest-description">{{ .description }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Education Section -->
+    {{ if .Site.Params.sections.education }}
+    <section id="education" class="section education-section">
+        <div class="section-content">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                {{ range .Site.Data.cv.education }}
+                {{ if .degree }}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">{{ .degree }}</h3>
+                        {{ if .institution }}
+                        <h4 class="timeline-subtitle">{{ .institution }}</h4>
+                        {{ end }}
+                        {{ if .location }}
+                        <p class="timeline-location">{{ .location }}</p>
+                        {{ end }}
+                        {{ if .year }}
+                        <p class="timeline-period">{{ .year }}</p>
+                        {{ end }}
+                        {{ if .thesis }}
+                        <p class="timeline-description"><strong>Thesis:</strong> {{ .thesis }}</p>
+                        {{ end }}
+                        {{ if .final_project }}
+                        <p class="timeline-description"><strong>Final Project:</strong> {{ .final_project }}</p>
+                        {{ end }}
+                        {{ if .supervisor }}
+                        <p class="timeline-description"><strong>Supervisor:</strong> {{ .supervisor }}</p>
+                        {{ end }}
+                        {{ if .gpa }}
+                        <p class="timeline-description"><strong>GPA:</strong> {{ .gpa }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Experience Section -->
+    {{ if .Site.Params.sections.experience }}
+    <section id="experience" class="section experience-section">
+        <div class="section-content">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                {{ range .Site.Data.cv.experience }}
+                {{ if .title }}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">{{ .title }}</h3>
+                        {{ if .organization }}
+                        <h4 class="timeline-subtitle">{{ .organization }}</h4>
+                        {{ end }}
+                        {{ if .location }}
+                        <p class="timeline-location">{{ .location }}</p>
+                        {{ end }}
+                        {{ if .period }}
+                        <p class="timeline-period">{{ .period }}</p>
+                        {{ end }}
+                        {{ if .description }}
+                        <p class="timeline-description">{{ .description }}</p>
+                        {{ end }}
+                        {{ if .achievements }}
+                        <ul class="achievements-list">
+                            {{ range .achievements }}
+                            <li class="achievement-item">{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Publications Section -->
+    {{ if .Site.Params.sections.publications }}
+    <section id="publications" class="section publications-section">
+        <div class="section-content">
+            <h2 class="section-title">Research Publications</h2>
+            
+            {{ if .Site.Data.cv.publications.journal }}
+            <div class="publication-category">
+                <h3 class="category-title">Journal Articles</h3>
+                {{ range .Site.Data.cv.publications.journal }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                    {{ if .status }}<span class="publication-status">{{ .status }}</span>{{ end }}
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                        {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Site.Data.cv.publications.conference }}
+            <div class="publication-category">
+                <h3 class="category-title">Conference Papers</h3>
+                {{ range .Site.Data.cv.publications.conference }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .conference }}, {{ .year }}</p>
+                    {{ if .award }}<span class="publication-award">{{ .award }}</span>{{ end }}
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                        {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Site.Data.cv.publications.preprint }}
+            <div class="publication-category">
+                <h3 class="category-title">Preprints</h3>
+                {{ range .Site.Data.cv.publications.preprint }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .arxiv }}<a href="https://arxiv.org/abs/{{ .arxiv }}" class="pub-link" aria-label="View arXiv"><i class="fas fa-external-link-alt"></i> arXiv</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Teaching Section -->
+    {{ if .Site.Params.sections.teaching }}
+    <section id="teaching" class="section teaching-section">
+        <div class="section-content">
+            <h2 class="section-title">Teaching Experience</h2>
+            <div class="teaching-grid">
+                {{ range .Site.Data.cv.teaching }}
+                <div class="teaching-item">
+                    <h3 class="teaching-course">{{ .course }}</h3>
+                    <p class="teaching-institution">{{ .institution }}</p>
+                    <p class="teaching-period">{{ .period }}</p>
+                    <p class="teaching-role">{{ .role }}</p>
+                    <p class="teaching-description">{{ .description }}</p>
+                    {{ if .responsibilities }}
+                    <ul class="responsibilities-list">
+                        {{ range .responsibilities }}
+                        <li class="responsibility-item">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Supervision Section -->
+    {{ if .Site.Params.sections.supervision }}
+    <section id="supervision" class="section supervision-section">
+        <div class="section-content">
+            <h2 class="section-title">Student Supervision</h2>
+            <div class="supervision-grid">
+                {{ range .Site.Data.cv.supervision }}
+                <div class="supervision-item">
+                    <h3 class="supervision-name">{{ .name }}</h3>
+                    <p class="supervision-level">{{ .level }}</p>
+                    <p class="supervision-period">{{ .period }}</p>
+                    <p class="supervision-project"><strong>Project:</strong> {{ .project }}</p>
+                    <span class="supervision-status status-{{ .status | lower }}">{{ .status }}</span>
+                    <p class="supervision-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Awards Section -->
+    {{ if .Site.Params.sections.awards }}
+    <section id="awards" class="section awards-section">
+        <div class="section-content">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid">
+                {{ range .Site.Data.cv.awards }}
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3 class="award-title">{{ .title }}</h3>
+                        <p class="award-organization">{{ .organization }}</p>
+                        <p class="award-year">{{ .year }}</p>
+                        <p class="award-description">{{ .description }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Skills Section -->
+    {{ if .Site.Params.sections.skills }}
+    <section id="skills" class="section skills-section">
+        <div class="section-content">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            {{ if .Site.Data.cv.skills.technical }}
+            <div class="skills-category">
+                <h3 class="category-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    {{ range .Site.Data.cv.skills.technical }}
+                    {{ if . }}
+                    <div class="skill-item">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <span>{{ . }}</span>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if .Site.Data.cv.skills.research }}
+            <div class="skills-category">
+                <h3 class="category-title">Research Areas</h3>
+                <div class="skills-grid">
+                    {{ range .Site.Data.cv.skills.research }}
+                    {{ if . }}
+                    <div class="skill-item">
+                        <i class="fas fa-microscope" aria-hidden="true"></i>
+                        <span>{{ . }}</span>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Languages Section -->
+    {{ if .Site.Params.sections.languages }}
+    <section id="languages" class="section languages-section">
+        <div class="section-content">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-grid">
+                {{ range .Site.Data.cv.languages }}
+                {{ if .language }}
+                <div class="language-item">
+                    <div class="language-name">{{ .language }}</div>
+                    <div class="language-proficiency">
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" data-proficiency="{{ .proficiency }}"></div>
+                        </div>
+                        <span class="proficiency-text">{{ .proficiency }}</span>
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,233 @@
+{{ define "main" }}
+<article class="cv-container">
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="section-content">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h1 class="name">{{ .Site.Data.cv.personal.name }}</h1>
+                    <h2 class="title">{{ .Site.Data.cv.personal.title }}</h2>
+                    <p class="summary">{{ .Site.Data.cv.personal.summary }}</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:{{ .Site.Data.cv.personal.email }}" class="contact-link">{{ .Site.Data.cv.personal.email }}</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span class="contact-text">{{ .Site.Data.cv.personal.location }}</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:{{ .Site.Data.cv.personal.phone }}" class="contact-link">{{ .Site.Data.cv.personal.phone }}</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="{{ .Site.Params.social.github }}" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="{{ .Site.Params.social.linkedin }}" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="{{ .Site.Params.social.scholar }}" class="social-link" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="{{ .Site.Params.social.orcid }}" class="social-link" aria-label="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                {{ if .Site.Params.show_photo }}
+                <div class="about-photo">
+                    <img src="{{ .Site.Params.photo_path | default "/images/profile.jpg" }}" 
+                         alt="Profile photo of {{ .Site.Data.cv.personal.name }}" 
+                         class="profile-photo">
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section id="research" class="section research-section">
+        <div class="section-content">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="interests-grid">
+                {{ range .Site.Data.cv.research_interests }}
+                <div class="interest-item">
+                    <i class="fas fa-microchip" aria-hidden="true"></i>
+                    <span>{{ . }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="section-content">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                {{ range .Site.Data.cv.education }}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">{{ .degree }}</h3>
+                        <h4 class="timeline-subtitle">{{ .institution }}</h4>
+                        <p class="timeline-location">{{ .location }}</p>
+                        <p class="timeline-period">{{ .year }}</p>
+                        {{ if .thesis }}
+                        <p class="timeline-description"><strong>Thesis:</strong> {{ .thesis }}</p>
+                        {{ end }}
+                        {{ if .advisor }}
+                        <p class="timeline-description"><strong>Advisor:</strong> {{ .advisor }}</p>
+                        {{ end }}
+                        {{ if .gpa }}
+                        <p class="timeline-description"><strong>GPA:</strong> {{ .gpa }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="section-content">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                {{ range .Site.Data.cv.experience }}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">{{ .title }}</h3>
+                        <h4 class="timeline-subtitle">{{ .organization }}</h4>
+                        <p class="timeline-location">{{ .location }}</p>
+                        <p class="timeline-period">{{ .period }}</p>
+                        <p class="timeline-description">{{ .description }}</p>
+                        {{ if .achievements }}
+                        <ul class="achievements-list">
+                            {{ range .achievements }}
+                            <li class="achievement-item">{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications-section">
+        <div class="section-content">
+            <h2 class="section-title">Research Publications</h2>
+            
+            {{ if .Site.Data.cv.publications.journal }}
+            <div class="publication-category">
+                <h3 class="category-title">Journal Articles</h3>
+                {{ range .Site.Data.cv.publications.journal }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                    {{ if .status }}<span class="publication-status">{{ .status }}</span>{{ end }}
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                        {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Site.Data.cv.publications.conference }}
+            <div class="publication-category">
+                <h3 class="category-title">Conference Papers</h3>
+                {{ range .Site.Data.cv.publications.conference }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .conference }}, {{ .year }}</p>
+                    {{ if .award }}<span class="publication-award">{{ .award }}</span>{{ end }}
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                        {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Site.Data.cv.publications.preprint }}
+            <div class="publication-category">
+                <h3 class="category-title">Preprints</h3>
+                {{ range .Site.Data.cv.publications.preprint }}
+                <div class="publication-item">
+                    <h4 class="publication-title">{{ .title }}</h4>
+                    <p class="publication-authors">{{ .authors }}</p>
+                    <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                    <div class="publication-links">
+                        {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                        {{ if .arxiv }}<a href="https://arxiv.org/abs/{{ .arxiv }}" class="pub-link" aria-label="View arXiv"><i class="fas fa-external-link-alt"></i> arXiv</a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="section teaching-section">
+        <div class="section-content">
+            <h2 class="section-title">Teaching Experience</h2>
+            <div class="teaching-grid">
+                {{ range .Site.Data.cv.teaching }}
+                <div class="teaching-item">
+                    <h3 class="teaching-course">{{ .course }}</h3>
+                    <p class="teaching-institution">{{ .institution }}</p>
+                    <p class="teaching-period">{{ .period }}</p>
+                    <p class="teaching-role">{{ .role }}</p>
+                    <p class="teaching-description">{{ .description }}</p>
+                    {{ if .responsibilities }}
+                    <ul class="responsibilities-list">
+                        {{ range .responsibilities }}
+                        <li class="responsibility-item">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Supervision Section -->
+    <section id="supervision" class="section supervision-section">
+        <div class="section-content">
+            <h2 class="section-title">Student Supervision</h2>
+            <div class="supervision-grid">
+                {{ range .Site.Data.cv.supervision }}
+                <div class="supervision-item">
+                    <h3 class="supervision-name">{{ .name }}</h3>
+                    <p class="supervision-level">{{ .level }}</p>
+                    <p class="supervision-period">{{ .period }}</p>
+                    <p class="supervision-project"><strong>Project:</strong> {{ .project }}</p>
+                    <span class="supervision-status status-{{ .status | lower }}">{{ .status }}</span>
+                    <p class="supervision-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</article>
+{{ end }}
+

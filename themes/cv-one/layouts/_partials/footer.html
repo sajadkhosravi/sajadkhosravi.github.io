@@ -1,0 +1,23 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                {{ if .Site.Params.social.email }}
+                <a href="mailto:{{ .Site.Params.social.email }}" class="footer-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+                {{ end }}
+                {{ if .Site.Params.social.github }}
+                <a href="{{ .Site.Params.social.github }}" class="footer-link" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                {{ end }}
+                {{ if .Site.Params.social.linkedin }}
+                <a href="{{ .Site.Params.social.linkedin }}" class="footer-link" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</footer>
