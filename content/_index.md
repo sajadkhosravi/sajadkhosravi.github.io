@@ -1,5 +1,5 @@
 ---
-title: "CV/Portfolio"
+title: "CV"
 type: "page"
 ---
 
