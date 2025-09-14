@@ -1,5 +1,4 @@
 ---
-title: "CV"
 type: "page"
 ---
 
