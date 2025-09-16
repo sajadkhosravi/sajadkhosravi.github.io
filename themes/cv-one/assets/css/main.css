@@ -1620,25 +1620,42 @@ body {
   }
   
   /* Specific padding for timeline content elements */
+  .timeline-title,
   .timeline-subtitle,
   .timeline-period,
-  .timeline-location {
-    padding: var(--space-sm) 0;
+  .timeline-location,
+  .timeline-description {
+    padding: var(--space-sm) var(--space-md);
     margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.1rem;
   }
   
   .timeline-subtitle {
     font-weight: 600;
     color: var(--text-accent);
+    font-size: 1rem;
   }
   
   .timeline-period {
     font-style: italic;
     color: var(--text-muted);
+    font-size: 0.9rem;
   }
   
   .timeline-location {
     color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .timeline-description {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   .section-title {
@@ -1709,25 +1726,87 @@ body {
   }
   
   /* Enhanced timeline content padding for small screens */
+  .timeline-title,
   .timeline-subtitle,
   .timeline-period,
-  .timeline-location {
-    padding: var(--space-sm) 0;
+  .timeline-location,
+  .timeline-description {
+    padding: var(--space-sm) var(--space-md);
     margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.1rem;
   }
   
   .timeline-subtitle {
     font-weight: 600;
     color: var(--text-accent);
+    font-size: 1rem;
   }
   
   .timeline-period {
     font-style: italic;
     color: var(--text-muted);
+    font-size: 0.9rem;
   }
   
   .timeline-location {
     color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .timeline-description {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Enhanced language section for small mobile screens */
+  .language-item {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-primary);
+  }
+  
+  .language-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    padding: var(--space-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
+  }
+  
+  .proficiency-bar {
+    height: 10px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .proficiency-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--text-accent), var(--text-primary));
+    border-radius: var(--radius-sm);
+    transition: width 0.3s ease;
+  }
+  
+  .proficiency-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    text-align: center;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
   }
 
   .skills-grid {
@@ -1760,6 +1839,51 @@ body {
   .language-proficiency {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+  
+  /* Enhanced language section for mobile */
+  .language-item {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-primary);
+  }
+  
+  .language-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    padding: var(--space-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
+  }
+  
+  .proficiency-bar {
+    height: 12px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .proficiency-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--text-accent), var(--text-primary));
+    border-radius: var(--radius-sm);
+    transition: width 0.3s ease;
+  }
+  
+  .proficiency-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    text-align: center;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
   }
 
   .publication-item {
