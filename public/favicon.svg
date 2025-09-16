@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <defs>
-    <style>
-      .cloud { fill: #58a6ff; }
-    </style>
-  </defs>
-  <path class="cloud" d="M24 14c0-4.4-3.6-8-8-8s-8 3.6-8 8c-2.2 0-4 1.8-4 4s1.8 4 4 4h16c2.2 0 4-1.8 4-4s-1.8-4-4-4z"/>
-</svg>
