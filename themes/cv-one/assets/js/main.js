@@ -89,7 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const mainContent = document.querySelector('.main-content');
         const heroSection = document.querySelector('.hero-section');
         
-        if (!fixedSidebar || !mainContent || !heroSection) return;
+        if (!fixedSidebar || !mainContent || !heroSection) {
+            return;
+        }
         
         // Only enable on desktop (≥1024px)
         function handleSidebar() {
@@ -121,16 +123,24 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarScrollTimeout = setTimeout(handleSidebar, 10);
         }
         
+        // Debug: Add immediate scroll handler
+        window.addEventListener('scroll', function() {
+            console.log('Scroll detected!');
+            handleSidebar();
+        });
+        
         // Initial call
         handleSidebar();
         
         // Event listeners
         window.addEventListener('scroll', handleSidebarScroll);
         window.addEventListener('resize', handleSidebar);
+        
     }
     
-    // Initialize dynamic sidebar
-    initDynamicSidebar();
+        // Initialize dynamic sidebar
+        initDynamicSidebar();
+        
 
 
     // Intersection Observer for fade-in animations
@@ -147,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe all sections
-    const sections = document.querySelectorAll('.section');
+    // Observe all sections except the About Me section
+    const sections = document.querySelectorAll('.section:not(.about-section)');
     sections.forEach(section => {
         observer.observe(section);
     });
@@ -165,6 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .section.fade-in {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* About Me section should always be visible without animation */
+        .about-section {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
         
         .nav-link.active {
@@ -189,14 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Print functionality
-    const printButton = document.getElementById('print-button');
-    if (printButton) {
-        printButton.addEventListener('click', function() {
-            // Generate PDF using browser's print functionality
-            window.print();
-        });
-    }
 
     // Download CV functionality
     const downloadCvLinks = document.querySelectorAll('.download-cv');
@@ -207,18 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Hide print button when printing
-    const printMediaQuery = window.matchMedia('print');
-    function handlePrintChange(mediaQuery) {
-        if (mediaQuery.matches) {
-            if (printButton) printButton.style.display = 'none';
-        } else {
-            if (printButton) printButton.style.display = 'flex';
-        }
-    }
-    
-    printMediaQuery.addListener(handlePrintChange);
-    handlePrintChange(printMediaQuery);
 
     // Keyboard navigation support
     document.addEventListener('keydown', function(e) {
@@ -228,11 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.classList.remove('active');
         }
         
-        // Ctrl/Cmd + P for print
-        if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-            e.preventDefault();
-            window.print();
-        }
     });
 
     // Add loading animation

@@ -1,14 +1,5 @@
 {{ define "main" }}
 <article class="cv-container">
-    <!-- Print Button -->
-    {{ if .Site.Params.print.enabled }}
-    <div class="print-button-container">
-        <button id="print-button" class="print-button" aria-label="Download PDF">
-            <i class="{{ .Site.Params.print.button_icon }}" aria-hidden="true"></i>
-            {{ .Site.Params.print.button_text }}
-        </button>
-    </div>
-    {{ end }}
 
     <!-- About Section -->
     {{ if .Site.Params.sections.about }}
