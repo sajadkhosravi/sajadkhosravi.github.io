@@ -19,7 +19,7 @@ theme = 'cv-one'
   photo_path = "images/sajad.png"
   
   # Navigation
-  show_nav = true
+  show_nav = false
   nav_style = "fixed"
   nav_show_name = false  # Hide name in navbar
   
