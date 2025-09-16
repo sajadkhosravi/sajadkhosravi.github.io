@@ -16,7 +16,7 @@ theme = 'cv-one'
   dark_mode = true
   terminal_style = true
   show_photo = true
-  photo_path = "images/sajad.jpg"
+  photo_path = "images/sajad.png"
   
   # Navigation
   show_nav = true

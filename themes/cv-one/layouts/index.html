@@ -360,30 +360,13 @@
         <div class="section-content">
             <h2 class="section-title">Skills & Expertise</h2>
             
-            {{ if .Site.Data.cv.skills.technical }}
+            {{ range $category, $skills := .Site.Data.cv.skills }}
             <div class="skills-category">
-                <h3 class="category-title">Technical Skills</h3>
+                <h3 class="category-title">{{ $category }}</h3>
                 <div class="skills-grid">
-                    {{ range .Site.Data.cv.skills.technical }}
+                    {{ range $skills }}
                     {{ if . }}
-                    <div class="skill-item">
-                        <i class="fas fa-code" aria-hidden="true"></i>
-                        <span>{{ . }}</span>
-                    </div>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-            {{ end }}
-
-            {{ if .Site.Data.cv.skills.research }}
-            <div class="skills-category">
-                <h3 class="category-title">Research Areas</h3>
-                <div class="skills-grid">
-                    {{ range .Site.Data.cv.skills.research }}
-                    {{ if . }}
-                    <div class="skill-item">
-                        <i class="fas fa-microscope" aria-hidden="true"></i>
+                    <div class="skill-badge">
                         <span>{{ . }}</span>
                     </div>
                     {{ end }}

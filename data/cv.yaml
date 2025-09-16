@@ -175,25 +175,32 @@ awards:
     description: "Awarded for outstanding editorial work and scientific communication"
 
 skills:
-  technical:
-    - "Programming: Python, Java, C++, JavaScript"
-    # - "Cloud Platforms: AWS, Azure, Google Cloud Platform"
-    - "Containerization: Docker, Kubernetes"
-    # - "ML/AI: TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy"
-    - "Databases: PostgreSQL, MongoDB, Redis, MySQL"
-    # - "Tools: Git"
-    # - "Frameworks: Django, Node.js, Spring"
-    - "Simulation: Ifogsim, CloudSim"
+  "Programming Languages":
+    - "Python"
+    - "Java"
+    - "C++"
+    - "JavaScript"
   
-  research:
-    - "Edge Computing & Cloud Systems"
-    - "Distributed Systems"
-    - "Resource Allocation & Scheduling"
-    - "Energy-Efficient Computing"
-    - "Performance Evaluation & Benchmarking"
-    - "System Architecture Design"
-    - "Computational Offloading"
-    - "Edge-Cloud Continuum"
+  "Cloud & DevOps":
+    - "Docker"
+    - "Kubernetes"
+  
+  "Databases":
+    - "PostgreSQL"
+    - "MongoDB"
+    - "Redis"
+    - "MySQL"
+    - "SQLite"
+  
+  "Tools & Frameworks":
+    - "Git"
+    - "Django"
+    - "Node.js"
+    - "Spring"
+  
+  "Simulation & Research":
+    - "iFogSim"
+    - "CloudSim"
 
 languages:
   - language: "Persian (Farsi)"
