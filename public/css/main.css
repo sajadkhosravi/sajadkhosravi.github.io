@@ -1153,7 +1153,7 @@ body {
   }
 
   .section-content {
-    padding: 0 var(--space-sm);
+    padding: var(--space-lg) !important;
   }
 
   .about-section {
@@ -1538,8 +1538,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  .section-content {
+    padding: var(--space-lg) !important;
+  }
+  
   .hero-section {
-    padding: var(--space-lg);
+    padding: var(--space-xl);
     margin: var(--space-sm);
   }
   
@@ -1550,24 +1554,97 @@ body {
   
   .hero-section .name {
     font-size: 2rem;
+    margin-bottom: var(--space-md);
   }
   
   .hero-section .title {
     font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
   }
   
   .hero-section .summary {
     font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--bg-accent);
+    border-radius: var(--radius-md);
   }
   
   .hero-section .contact-item {
     font-size: 0.9rem;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-sm);
   }
   
   .hero-section .social-link {
     width: 36px;
     height: 36px;
     font-size: 1rem;
+    margin: var(--space-xs);
+  }
+  
+  .hero-section .social-links {
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+  
+  .hero-section .contact-info {
+    padding: var(--space-md);
+    background: var(--bg-accent);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+  }
+  
+  /* Ensure all content items have proper mobile padding */
+  .timeline-item,
+  .publication-item,
+  .interest-item,
+  .skill-badge,
+  .language-item {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+  
+  .timeline-title,
+  .publication-title,
+  .interest-name {
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+  }
+  
+  .timeline-description,
+  .publication-authors,
+  .interest-description {
+    padding: var(--space-sm);
+    line-height: 1.5;
+  }
+  
+  /* Specific padding for timeline content elements */
+  .timeline-subtitle,
+  .timeline-period,
+  .timeline-location {
+    padding: var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-subtitle {
+    font-weight: 600;
+    color: var(--text-accent);
+  }
+  
+  .timeline-period {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+  
+  .timeline-location {
+    color: var(--text-muted);
+  }
+  
+  .section-title {
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-lg);
+    text-align: center;
   }
 }
 
@@ -1577,24 +1654,32 @@ body {
   }
 
   .section-content {
-    padding: var(--space-md);
+    padding: var(--space-lg);
   }
 
   .about-section {
-    padding: var(--space-lg);
+    padding: var(--space-xl);
+    margin: var(--space-sm);
   }
 
   .name {
     font-size: 1.75rem;
+    margin-bottom: var(--space-md);
   }
 
   .section-title {
     font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md) 0;
   }
 
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
   }
 
   .timeline-marker {
@@ -1607,35 +1692,155 @@ body {
     padding-left: 0;
   }
 
+  .timeline-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .timeline-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: var(--space-sm);
+  }
+  
+  /* Enhanced timeline content padding for small screens */
+  .timeline-subtitle,
+  .timeline-period,
+  .timeline-location {
+    padding: var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-subtitle {
+    font-weight: 600;
+    color: var(--text-accent);
+  }
+  
+  .timeline-period {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+  
+  .timeline-location {
+    color: var(--text-muted);
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
+    padding: var(--space-md);
   }
   
   .skill-badge {
-    font-size: 0.8rem;
-    padding: var(--space-xs) var(--space-sm);
-    min-height: 28px;
+    font-size: 0.85rem;
+    padding: var(--space-md) var(--space-lg);
+    min-height: 40px;
     width: 100%;
+    border-radius: var(--radius-md);
   }
   
   .award-item {
     flex-direction: column;
     text-align: center;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
   }
   
   .award-icon {
-    margin: 0 auto;
+    margin: 0 auto var(--space-md) auto;
   }
   
   .language-proficiency {
     flex-direction: column;
     gap: var(--space-sm);
   }
+
+  .publication-item {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+  }
+
+  .publication-title {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .publication-authors {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .publication-venue {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .publication-links {
+    margin-top: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .pub-link {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .interest-item {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+  }
+
+  .interest-name {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .interest-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: var(--space-sm);
+  }
   
   .proficiency-text {
     text-align: center;
     min-width: auto;
+  }
+
+  /* Additional mobile touch improvements */
+  .social-link,
+  .pub-link,
+  .contact-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: var(--space-md) var(--space-lg);
+    min-height: 44px;
+  }
+
+  .skill-badge {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

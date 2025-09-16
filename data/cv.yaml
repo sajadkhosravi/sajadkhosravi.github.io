@@ -192,6 +192,11 @@ skills:
     - "MySQL"
     - "SQLite"
   
+  "Operating Systems":
+    - "Linux"
+    - "Windows"
+    - "macOS"
+  
   "Tools & Frameworks":
     - "Git"
     - "Django"
