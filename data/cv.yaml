@@ -35,14 +35,14 @@ education:
     year: "Sep 2018 - Feb 2022"
     thesis: "Machine Learning-Based computational offloading in Edge Computing"
     supervisor: "Saeid Abrishami"
-    gpa: "16.63/20.0"
+    # gpa: "16.63/20.0"
     
   - degree: "BSc in Software Engineering"
     institution: "Ferdowsi University of Mashhad"
     location: "Mashhad, Iran"
     year: "Sep2014 - Sep 2018"
     final_project: "Health care IoT devices and applications"
-    gpa: "16.22/20.0"
+    # gpa: "16.22/20.0"
 
 experience:
   - title: "PhD Student"
@@ -96,11 +96,12 @@ publications:
       authors: "Sajad Khosravi; Christoph Kessler; Sebastian Litzinger; Jörg Keller"
       conference: "9th International Conference on Fog and Mobile Edge Computing (FMEC)"
       year: "2024"
-      # pages: "123-136"
       doi: "10.1109/FMEC62297.2024.10710310"
-      # pdf: "https://ieeexplore.ieee.org/abstract/document/10710310"
-      # code: "https://github.com/yourusername/distributed-ml-edge"
-      # award: "Best Paper Award"
+    - title: "Quality-Aware Energy-Efficient Scheduling of Moldable-Parallel Streaming Computations on Heterogeneous Multicore CPUs with DVFS"
+      authors: "Sajad Khosravi; Sebastian Litzinger; Christoph Kessler; Jörg Keller"
+      conference: "Proc. of 28th Workshop on Job Scheduling Strategies for Parallel Processing (JSSPP-2025) in conjunction with IPDPS'25"
+      year: "2025"
+      doi: ""
       
   # preprint:
   #   - title: "Federated Learning at the Edge: A Comprehensive Survey"
@@ -111,25 +112,61 @@ publications:
   #     pdf: "papers/sample-paper.pdf"
 
 teaching:
-  - course: "CS 301: Data Structures and Algorithms"
-    institution: "University Name"
-    period: "Fall 2023, Spring 2024"
+  - course: "TDDE45: Software Design and Construction"
+    institution: "Linköping University, Sweden"
+    period: "Sep 2023, Present"
     role: "Teaching Assistant"
-    description: "Assisted in teaching fundamental data structures and algorithm design principles to 80+ undergraduate students."
-    responsibilities:
-      - "Led weekly discussion sections"
-      - "Graded assignments and exams"
-      - "Held office hours and provided tutoring"
+    # description: "Assisted in teaching fundamental data structures and algorithm design principles to 80+ undergraduate students."
+    # responsibilities:
+    #   - "Led weekly discussion sections"
+    #   - "Graded assignments and exams"
+    #   - "Held office hours and provided tutoring"
       
-  - course: "CS 401: Distributed Systems"
-    institution: "University Name"
-    period: "Fall 2022"
+  - course: "TDDD56: Multicore and GPU Programming"
+    institution: "Linköping University, Sweden"
+    period: "Nov 2023, Present"
     role: "Teaching Assistant"
-    description: "Supported instruction in distributed systems concepts including consistency, replication, and fault tolerance."
-    responsibilities:
-      - "Developed lab exercises"
-      - "Mentored student projects"
-      - "Provided technical support"
+    # description: "Supported instruction in distributed systems concepts including consistency, replication, and fault tolerance."
+    # responsibilities:
+    #   - "Developed lab exercises"
+    #   - "Mentored student projects"
+    #   - "Provided technical support"
+       
+  - course: "TDDE65: Programming of parallel computers - methods and tools"
+    institution: "Linköping University, Sweden"
+    period: "Apr 2024, Present"
+    role: "Teaching Assistant"
+    # description: "Supported instruction in distributed systems concepts including consistency, replication, and fault tolerance."
+    # responsibilities:
+    #   - "Developed lab exercises"
+    #   - "Mentored student projects"
+    #   - "Provided technical support"
+           
+  - course: "Cloud Computing"
+    institution: "Ferdowsi University of Mashhad, Iran"
+    period: "Sep 2020, Sep2021"
+    role: "Teaching Assistant"
+       
+  - course: "Theory of Languages and Machines "
+    institution: "Ferdowsi University of Mashhad, Iran"
+    period: "Jan 2019, Sep 2019"
+    role: "Teaching Assistant"
+  
+  - course: "Computer Architecture"
+    institution: "Ferdowsi University of Mashhad, Iran"
+    period: "Sep 2016, Sep 2017"
+    role: "Teaching Assistant"
+
+  - course: "Engineering Mathematics"
+    institution: "Ferdowsi University of Mashhad, Iran"
+    period: "Sep 2016, Sep 2017"
+    role: "Teaching Assistant"
+
+  - course: "Discrete Mathematics"
+    institution: "Ferdowsi University of Mashhad, Iran"
+    period: "Sep 2015, Sep 2016"
+    role: "Teaching Assistant"
+  
 
 supervision:
   - name: "Jane Smith"

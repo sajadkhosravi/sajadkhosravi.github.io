@@ -151,58 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Print functionality
-    const printButton = document.createElement('button');
-    printButton.innerHTML = '<i class="fas fa-print"></i> Print CV';
-    printButton.className = 'print-button';
-    printButton.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: var(--text-accent);
-        color: var(--bg-primary);
-        border: none;
-        padding: 12px 16px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-family: var(--font-mono);
-        font-size: 14px;
-        box-shadow: var(--shadow-lg);
-        z-index: 1000;
-        transition: var(--transition-fast);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    `;
-    
-    printButton.addEventListener('click', function() {
-        window.print();
-    });
-    
-    printButton.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 15px 25px rgba(0, 0, 0, 0.2)';
-    });
-    
-    printButton.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = 'var(--shadow-lg)';
-    });
-    
-    document.body.appendChild(printButton);
+    // Print functionality removed per user request
 
-    // Hide print button when printing
-    const printMediaQuery = window.matchMedia('print');
-    function handlePrintChange(mediaQuery) {
-        if (mediaQuery.matches) {
-            printButton.style.display = 'none';
-        } else {
-            printButton.style.display = 'flex';
-        }
-    }
-    
-    printMediaQuery.addListener(handlePrintChange);
-    handlePrintChange(printMediaQuery);
 
     // Keyboard navigation support
     document.addEventListener('keydown', function(e) {
