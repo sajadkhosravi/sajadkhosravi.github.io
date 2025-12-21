@@ -31,17 +31,8 @@ theme = 'cv-one'
     email = "mailto:sajad.khosravi@liu.se"
   
   # Section visibility controls
-  [params.sections]
-    about = true
-    research = true
-    education = true
-    experience = true
-    publications = true
-    teaching = true
-    supervision = false
-    awards = false
-    skills = true
-    languages = true
+  # [params.sections]
+  # Configured in data/homepage/*.yaml directly via 'enable' field
   
   # Print functionality
   [params.print]
@@ -73,12 +64,12 @@ theme = 'cv-one'
     url = "#research"
     weight = 2
   [[menu.main]]
-    name = "Education"
-    url = "#education"
-    weight = 3
-  [[menu.main]]
     name = "Experience"
     url = "#experience"
+    weight = 3
+  [[menu.main]]
+    name = "Education"
+    url = "#education"
     weight = 4
   [[menu.main]]
     name = "Publications"
@@ -89,9 +80,13 @@ theme = 'cv-one'
     url = "#skills"
     weight = 6
   [[menu.main]]
+    name = "Volunteer"
+    url = "#volunteer"
+    weight = 7
+  [[menu.main]]
     name = "Languages"
     url = "#languages"
-    weight = 7
+    weight = 8
 
 [markup]
   [markup.goldmark]

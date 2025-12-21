@@ -1,0 +1,20 @@
+<section id="{{ .id }}" class="section languages-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="languages-grid">
+            {{ range .items }}
+            {{ if .language }}
+            <div class="language-item">
+                <div class="language-name">{{ .language }}</div>
+                <div class="language-proficiency">
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" data-proficiency="{{ .proficiency }}"></div>
+                    </div>
+                    <span class="proficiency-text">{{ .proficiency }}</span>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>

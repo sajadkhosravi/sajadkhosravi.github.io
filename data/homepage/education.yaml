@@ -1,0 +1,26 @@
+weight: 40
+id: "education"
+enable: true
+title: "Education"
+items:
+  - degree: "PhD in Computer Science"
+    institution: "Linköping University"
+    location: "Linköping, Sweden"
+    year: "Dec 2022 - Present"
+    thesis: "Adaptive software for the heterogeneous Edge-Cloud-Continuum"
+    supervisor: "Christoph Kessler"
+    
+  - degree: "MSc in Software Engineering"
+    institution: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    year: "Sep 2018 - Feb 2022"
+    thesis: "Machine Learning-Based computational offloading in Edge Computing"
+    supervisor: "Saeid Abrishami"
+    # gpa: "16.63/20.0"
+    
+  - degree: "BSc in Software Engineering"
+    institution: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    year: "Sep2014 - Sep 2018"
+    final_project: "Health care IoT devices and applications"
+    # gpa: "16.22/20.0"

@@ -1,0 +1,60 @@
+<section id="{{ .id }}" class="section publications-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        
+        {{ if .journal }}
+        <div class="publication-category">
+            <h3 class="category-title">Journal Articles</h3>
+            {{ range .journal }}
+            <div class="publication-item">
+                <h4 class="publication-title">{{ .title }}</h4>
+                <p class="publication-authors">{{ .authors }}</p>
+                <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                {{ if .status }}<span class="publication-status">{{ .status }}</span>{{ end }}
+                <div class="publication-links">
+                    {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                    {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                    {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .conference }}
+        <div class="publication-category">
+            <h3 class="category-title">Conference Papers</h3>
+            {{ range .conference }}
+            <div class="publication-item">
+                <h4 class="publication-title">{{ .title }}</h4>
+                <p class="publication-authors">{{ .authors }}</p>
+                <p class="publication-venue">{{ .conference }}, {{ .year }}</p>
+                {{ if .award }}<span class="publication-award">{{ .award }}</span>{{ end }}
+                <div class="publication-links">
+                    {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                    {{ if .doi }}<a href="https://doi.org/{{ .doi }}" class="pub-link" aria-label="View DOI"><i class="fas fa-external-link-alt"></i> DOI</a>{{ end }}
+                    {{ if .code }}<a href="{{ .code }}" class="pub-link" aria-label="View Code"><i class="fab fa-github"></i> Code</a>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .preprint }}
+        <div class="publication-category">
+            <h3 class="category-title">Preprints</h3>
+            {{ range .preprint }}
+            <div class="publication-item">
+                <h4 class="publication-title">{{ .title }}</h4>
+                <p class="publication-authors">{{ .authors }}</p>
+                <p class="publication-venue">{{ .journal }}, {{ .year }}</p>
+                <div class="publication-links">
+                    {{ if .pdf }}<a href="{{ .pdf }}" class="pub-link" aria-label="Download PDF"><i class="fas fa-file-pdf"></i> PDF</a>{{ end }}
+                    {{ if .arxiv }}<a href="https://arxiv.org/abs/{{ .arxiv }}" class="pub-link" aria-label="View arXiv"><i class="fas fa-external-link-alt"></i> arXiv</a>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>

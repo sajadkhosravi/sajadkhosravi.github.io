@@ -1,0 +1,23 @@
+<section id="{{ .id }}" class="section teaching-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="teaching-grid">
+            {{ range .items }}
+            <div class="teaching-item">
+                <h3 class="teaching-course">{{ .course }}</h3>
+                <p class="teaching-institution">{{ .institution }}</p>
+                <p class="teaching-period">{{ .period }}</p>
+                <p class="teaching-role">{{ .role }}</p>
+                <p class="teaching-description">{{ .description }}</p>
+                {{ if .responsibilities }}
+                <ul class="responsibilities-list">
+                    {{ range .responsibilities }}
+                    <li class="responsibility-item">{{ . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

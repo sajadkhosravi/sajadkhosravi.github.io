@@ -1,0 +1,36 @@
+weight: 60
+id: "skills"
+enable: true
+title: "Skills & Expertise"
+categories:
+  "Programming Languages":
+    - "Python"
+    - "Java"
+    - "C++"
+    - "JavaScript"
+  
+  "Cloud & DevOps":
+    - "Docker"
+    - "Kubernetes"
+  
+  "Databases":
+    - "PostgreSQL"
+    - "MongoDB"
+    - "Redis"
+    - "MySQL"
+    - "SQLite"
+  
+  "Operating Systems":
+    - "Linux"
+    - "Windows"
+    - "macOS"
+  
+  "Tools & Frameworks":
+    - "Git"
+    - "Django"
+    - "Node.js"
+    - "Spring"
+  
+  "Simulation & Research":
+    - "iFogSim"
+    - "CloudSim"

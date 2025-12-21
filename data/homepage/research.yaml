@@ -1,0 +1,17 @@
+weight: 20
+id: "research"
+enable: true
+title: "Research Interests"
+items:
+  - name: "Edge Computing and Edge-Cloud Integration"
+    icon: "fas fa-server"
+    description: "Research on integrating edge and cloud computing paradigms"
+  - name: "Cloud Computing"
+    icon: "fas fa-cloud"
+    description: "Distributed computing and cloud infrastructure research"
+  - name: "Distributed Systems"
+    icon: "fas fa-network-wired"
+    description: "Design and analysis of distributed computing systems"
+  - name: "Resource Allocation and Scheduling"
+    icon: "fas fa-tasks"
+    description: "Optimization algorithms for resource management"

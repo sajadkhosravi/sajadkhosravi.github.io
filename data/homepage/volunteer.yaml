@@ -1,0 +1,14 @@
+weight: 70
+id: "volunteer"
+enable: true
+title: "Volunteer Work Experience"
+items:
+  - title: "Member of IDA PhD Council"
+    organization: "Linköping University"
+    location: "Linköping, Sweden"
+    period: "Nov 2025 - Present"
+
+  - title: "Managing editor of Escape scientific magazine"
+    organization: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    period: "Jan 2016 - Jan 2018"

@@ -1,0 +1,17 @@
+<section id="{{ .id }}" class="section supervision-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="supervision-grid">
+            {{ range .items }}
+            <div class="supervision-item">
+                <h3 class="supervision-name">{{ .name }}</h3>
+                <p class="supervision-level">{{ .level }}</p>
+                <p class="supervision-period">{{ .period }}</p>
+                <p class="supervision-project"><strong>Project:</strong> {{ .project }}</p>
+                <span class="supervision-status status-{{ .status | lower }}">{{ .status }}</span>
+                <p class="supervision-description">{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

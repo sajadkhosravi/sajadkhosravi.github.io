@@ -1,0 +1,24 @@
+weight: 100
+id: "awards"
+enable: false
+title: "Awards & Recognition"
+items:
+  - title: "Best Paper Award"
+    organization: "9th International Conference on Fog and Mobile Edge Computing (FMEC)"
+    year: "2024"
+    description: "Awarded for the paper 'Energy-Efficient Scheduling of Moldable Streaming Computations for the Edge-Cloud Continuum'"
+    
+  - title: "PhD Scholarship"
+    organization: "Linköping University"
+    year: "2022-2026"
+    description: "Full PhD scholarship for research in Edge-Cloud Computing"
+    
+  - title: "Outstanding Graduate Student"
+    organization: "Ferdowsi University of Mashhad"
+    year: "2022"
+    description: "Recognized for academic excellence and research contributions during Master's studies"
+    
+  - title: "Managing Editor Recognition"
+    organization: "Escape Scientific Magazine"
+    year: "2018"
+    description: "Awarded for outstanding editorial work and scientific communication"

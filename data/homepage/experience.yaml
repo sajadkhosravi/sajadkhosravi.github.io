@@ -1,0 +1,39 @@
+weight: 30
+id: "experience"
+enable: true
+title: "Work Experience"
+items:
+  - title: "PhD Student"
+    organization: "Linköping University"
+    location: "Linköping, Sweden"
+    period: "Dec 2022 - Present"
+
+  - title: "Software Engineer"
+    organization: "Part Company"
+    location: "Mashhad, Iran"
+    period: "Jun 2022 - Oct 2022"
+    
+  - title: "Software Engineer"
+    organization: "Paykan Company"
+    location: "Mashhad, Iran"
+    period: "Oct 2021 - Oct 2022"
+
+  - title: "Software Engineer"
+    organization: "Part Company"
+    location: "Mashhad, Iran"
+    period: "Nov 2018 - Aug 2020"
+  
+  - title: "Software Engineer"
+    organization: "Cycass Company"
+    location: "Mashhad, Iran"
+    period: "Jun 2018 - Nov 2018"
+
+  - title: "Research Assistant"
+    organization: "Ferdowsi University of Mashhad"
+    location: "Mashhad, Iran"
+    period: "Sep 2018 - May 2022"
+
+  # - title: "Managing editor of Escape scientific magazine"
+  #   organization: "Ferdowsi University of Mashhad"
+  #   location: "Mashhad, Iran"
+  #   period: "Jan 2016 - Jan 2018"

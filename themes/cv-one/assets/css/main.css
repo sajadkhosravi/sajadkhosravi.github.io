@@ -94,151 +94,11 @@ body {
   padding: 0 var(--space-md);
 }
 
-/* Fixed Sidebar */
-.fixed-sidebar {
-  position: fixed;
-  top: 0;
-  left: -300px; /* Hidden initially */
-  width: 300px;
-  height: 100vh;
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-  border-right: 1px solid var(--border-primary);
-  z-index: 1000;
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto;
-  padding: var(--space-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.fixed-sidebar.active {
-  left: 0;
-}
-
-.sidebar-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xl);
-  text-align: center;
-  width: 100%;
-  max-width: 250px;
-}
-
-.sidebar-photo {
-  margin-bottom: var(--space-sm);
-}
-
-.sidebar-photo .profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: contain;
-  object-position: center top;
-  border: 3px solid var(--text-accent);
-}
-
-.sidebar-text {
-  text-align: center;
-  width: 100%;
-}
-
-.sidebar-name {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-lg);
-  line-height: 1.2;
-}
-
-.sidebar-contact-info {
-  margin-bottom: var(--space-lg);
-  width: 100%;
-}
-
-.sidebar-contact-info .contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.sidebar-contact-info .contact-item i {
-  width: 16px;
-  color: var(--text-accent);
-  flex-shrink: 0;
-}
-
-.sidebar-contact-info .contact-link,
-.sidebar-contact-info .contact-text {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  text-align: center;
-}
-
-.sidebar-contact-info .contact-link:hover {
-  color: var(--text-accent);
-}
-
-.sidebar-social-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  width: 100%;
-}
-
-.sidebar-social-links .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--space-md);
-  padding: var(--space-md) var(--space-lg);
-  background: var(--bg-accent);
-  color: var(--text-secondary);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  transition: var(--transition-fast);
-  font-size: 0.9rem;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid transparent;
-}
-
-.sidebar-social-links .social-link:hover {
-  background: var(--text-accent);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
-  border-color: var(--text-accent);
-  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
-}
-
-.sidebar-social-links .social-link i {
-  width: 20px;
-  text-align: center;
-  flex-shrink: 0;
-  font-size: 1rem;
-}
-
-.sidebar-social-links .social-link span {
-  font-weight: 500;
-  font-size: 0.85rem;
-}
 
 /* Main Content */
 .main-content {
-  transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 100vh;
-}
-
-.main-content.with-sidebar {
-  margin-left: 300px;
 }
 
 /* Hero Section (About Me) */
@@ -1512,13 +1372,7 @@ body {
 
 /* Dynamic Layout Responsive Design */
 @media (max-width: 1023px) {
-  .fixed-sidebar {
-    display: none;
-  }
-  
-  .main-content.with-sidebar {
-    margin-left: 0;
-  }
+
   
   .hero-section .about-grid {
     grid-template-columns: 1fr;

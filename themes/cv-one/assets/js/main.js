@@ -83,64 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial call
     updateActiveNavLink();
 
-    // Dynamic Sidebar Functionality
-    function initDynamicSidebar() {
-        const fixedSidebar = document.getElementById('fixed-sidebar');
-        const mainContent = document.querySelector('.main-content');
-        const heroSection = document.querySelector('.hero-section');
-        
-        if (!fixedSidebar || !mainContent || !heroSection) {
-            return;
-        }
-        
-        // Only enable on desktop (≥1024px)
-        function handleSidebar() {
-            if (window.innerWidth < 1024) {
-                fixedSidebar.classList.remove('active');
-                mainContent.classList.remove('with-sidebar');
-                return;
-            }
-            
-            const heroRect = heroSection.getBoundingClientRect();
-            const heroBottom = heroRect.bottom;
-            
-            // Show sidebar when hero section is scrolled past
-            if (heroBottom <= 0) {
-                fixedSidebar.classList.add('active');
-                mainContent.classList.add('with-sidebar');
-            } else {
-                fixedSidebar.classList.remove('active');
-                mainContent.classList.remove('with-sidebar');
-            }
-        }
-        
-        // Throttled scroll handler for sidebar
-        let sidebarScrollTimeout;
-        function handleSidebarScroll() {
-            if (sidebarScrollTimeout) {
-                clearTimeout(sidebarScrollTimeout);
-            }
-            sidebarScrollTimeout = setTimeout(handleSidebar, 10);
-        }
-        
-        // Debug: Add immediate scroll handler
-        window.addEventListener('scroll', function() {
-            console.log('Scroll detected!');
-            handleSidebar();
-        });
-        
-        // Initial call
-        handleSidebar();
-        
-        // Event listeners
-        window.addEventListener('scroll', handleSidebarScroll);
-        window.addEventListener('resize', handleSidebar);
-        
-    }
-    
-        // Initialize dynamic sidebar
-        initDynamicSidebar();
-        
 
 
     // Intersection Observer for fade-in animations

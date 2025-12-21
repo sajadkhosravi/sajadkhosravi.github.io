@@ -251,3 +251,13 @@ languages:
     proficiency: "Fluent"
   - language: "Swedish"
     proficiency: "Basic"
+
+volunteer:
+  - title: "Volunteer Developer"
+    organization: "Open Source Initiative"
+    location: "Global (Remote)"
+    period: "Jan 2023 - Present"
+    description: "Contributing to various open source projects focused on digital rights and privacy."
+    achievements:
+      - "Contributed code to Project X"
+      - "Helped organize community events"

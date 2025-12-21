@@ -1,0 +1,38 @@
+<section id="{{ .id }}" class="section education-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="timeline">
+            {{ range .items }}
+            {{ if .degree }}
+            <div class="timeline-item">
+                {{ if .year }}
+                <div class="timeline-date">{{ .year }}</div>
+                {{ end }}
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">{{ .degree }}</h3>
+                    {{ if .institution }}
+                    <h4 class="timeline-subtitle">{{ .institution }}</h4>
+                    {{ end }}
+                    {{ if .location }}
+                    <p class="timeline-location">{{ .location }}</p>
+                    {{ end }}
+                    {{ if .thesis }}
+                    <p class="timeline-description"><strong>Thesis:</strong> {{ .thesis }}</p>
+                    {{ end }}
+                    {{ if .final_project }}
+                    <p class="timeline-description"><strong>Final Project:</strong> {{ .final_project }}</p>
+                    {{ end }}
+                    {{ if .supervisor }}
+                    <p class="timeline-description"><strong>Supervisor:</strong> {{ .supervisor }}</p>
+                    {{ end }}
+                    {{ if .gpa }}
+                    <p class="timeline-description"><strong>GPA:</strong> {{ .gpa }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>

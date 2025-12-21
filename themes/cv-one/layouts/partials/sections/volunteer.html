@@ -1,0 +1,36 @@
+<section id="{{ .id }}" class="section volunteer-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="timeline">
+            {{ range .items }}
+            {{ if .title }}
+            <div class="timeline-item">
+                {{ if .period }}
+                <div class="timeline-date">{{ .period }}</div>
+                {{ end }}
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">{{ .title }}</h3>
+                    {{ if .organization }}
+                    <h4 class="timeline-subtitle">{{ .organization }}</h4>
+                    {{ end }}
+                    {{ if .location }}
+                    <p class="timeline-location">{{ .location }}</p>
+                    {{ end }}
+                    {{ if .description }}
+                    <p class="timeline-description">{{ .description }}</p>
+                    {{ end }}
+                    {{ if .achievements }}
+                    <ul class="achievements-list">
+                        {{ range .achievements }}
+                        <li class="achievement-item">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>

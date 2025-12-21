@@ -1,0 +1,24 @@
+<section id="{{ .id }}" class="section research-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="interests-grid">
+            {{ range .items }}
+            {{ if .name }}
+            <div class="interest-item">
+                {{ if .icon }}
+                    <i class="{{ .icon }}" aria-hidden="true"></i>
+                {{ else }}
+                    <i class="fas fa-microchip" aria-hidden="true"></i>
+                {{ end }}
+                <div class="interest-content">
+                    <span class="interest-name">{{ .name }}</span>
+                    {{ if .description }}
+                    <p class="interest-description">{{ .description }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>

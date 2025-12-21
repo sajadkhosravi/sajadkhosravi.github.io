@@ -1,0 +1,20 @@
+<section id="{{ .id }}" class="section awards-section">
+    <div class="section-content">
+        <h2 class="section-title">{{ .title }}</h2>
+        <div class="awards-grid">
+            {{ range .items }}
+            <div class="award-item">
+                <div class="award-icon">
+                    <i class="fas fa-trophy" aria-hidden="true"></i>
+                </div>
+                <div class="award-content">
+                    <h3 class="award-title">{{ .title }}</h3>
+                    <p class="award-organization">{{ .organization }}</p>
+                    <p class="award-year">{{ .year }}</p>
+                    <p class="award-description">{{ .description }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

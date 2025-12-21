@@ -1,0 +1,25 @@
+weight: 90
+id: "supervision"
+enable: false
+title: "Student Supervision"
+items:
+  - name: "Jane Smith"
+    level: "Undergraduate Research Assistant"
+    period: "2023 - Present"
+    project: "Edge Computing Resource Optimization"
+    status: "Ongoing"
+    description: "Mentoring undergraduate student in developing machine learning models for edge resource allocation."
+    
+  - name: "John Doe"
+    level: "Master's Thesis Student"
+    period: "2022 - 2023"
+    project: "5G Network Slicing Optimization"
+    status: "Completed"
+    description: "Co-supervised master's thesis on 5G network slicing algorithms. Student graduated with distinction."
+    
+  - name: "Alice Johnson"
+    level: "Undergraduate Research Assistant"
+    period: "2021 - 2022"
+    project: "IoT Data Processing at the Edge"
+    status: "Completed"
+    description: "Supervised research project on efficient data processing techniques for IoT applications in edge environments."

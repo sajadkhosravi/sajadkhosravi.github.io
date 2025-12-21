@@ -1,0 +1,11 @@
+weight: 110
+id: "languages"
+enable: true
+title: "Languages"
+items:
+  - language: "Persian (Farsi)"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Fluent"
+  - language: "Swedish"
+    proficiency: "Basic"
