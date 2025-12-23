@@ -34,49 +34,9 @@
                 </div>
                 
                 <div class="social-links">
-                    {{ if site.Params.social.github }}
-                    <a href="{{ site.Params.social.github }}" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.linkedin }}
-                    <a href="{{ site.Params.social.linkedin }}" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.scholar }}
-                    <a href="{{ site.Params.social.scholar }}" class="social-link" aria-label="Google Scholar" target="_blank" rel="noopener">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.orcid }}
-                    <a href="{{ site.Params.social.orcid }}" class="social-link" aria-label="ORCID" target="_blank" rel="noopener">
-                        <i class="fab fa-orcid"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.twitter }}
-                    <a href="{{ site.Params.social.twitter }}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.researchgate }}
-                    <a href="{{ site.Params.social.researchgate }}" class="social-link" aria-label="ResearchGate" target="_blank" rel="noopener">
-                        <i class="fab fa-researchgate"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.dblp }}
-                    <a href="{{ site.Params.social.dblp }}" class="social-link" aria-label="DBLP" target="_blank" rel="noopener">
-                        <i class="fas fa-database"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.website }}
-                    <a href="{{ site.Params.social.website }}" class="social-link" aria-label="Website" target="_blank" rel="noopener">
-                        <i class="fas fa-globe"></i>
-                    </a>
-                    {{ end }}
-                    {{ if site.Params.social.email }}
-                    <a href="{{ site.Params.social.email }}" class="social-link" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
+                    {{ range .social_links }}
+                    <a href="{{ .url }}" class="social-link" aria-label="{{ .name }}" target="_blank" rel="noopener">
+                        <i class="{{ .icon }}"></i>
                     </a>
                     {{ end }}
                 </div>

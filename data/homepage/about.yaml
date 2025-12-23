@@ -9,3 +9,17 @@ personal:
   # phone: "+46"
   # website: "https://sajadkhosravi.github.io"
   summary: "I am a PhD student at Linköping University, Sweden, working on adaptive software for the Edge-Cloud Continuum. My research focuses on Edge Computing, Cloud Computing, and Distributed Systems. I am particularly interested in how software can adapt dynamically to the unique challenges of edge and cloud infrastructures, enabling better performance, resource optimization, and scalability."
+
+social_links:
+  - name: "GitHub"
+    url: "https://github.com/sajadkhosravi"
+    icon: "fab fa-github"
+  - name: "LinkedIn"
+    url: "https://linkedin.com/in/sajadkhosravi"
+    icon: "fab fa-linkedin"
+  # - name: "Google Scholar"
+  #   url: "https://scholar.google.com/citations?user=fRmGZrUAAAAJ&hl=en&oi=ao"
+  #   icon: "fas fa-graduation-cap"
+  - name: "Email"
+    url: "mailto:sajad.khosravi@liu.se"
+    icon: "fas fa-envelope"
