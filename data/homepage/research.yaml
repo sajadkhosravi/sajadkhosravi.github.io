@@ -15,3 +15,6 @@ items:
   - name: "Resource Allocation and Scheduling"
     icon: "fas fa-tasks"
     description: "Optimization algorithms for resource management"
+  - name: "Parallel Programming"
+    icon: "fas fa-microchip"
+    description: "Parallel programming and its applications"

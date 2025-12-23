@@ -3,34 +3,43 @@ id: "skills"
 enable: true
 title: "Skills & Expertise"
 categories:
-  "Programming Languages":
-    - "Python"
-    - "Java"
-    - "C++"
-    - "JavaScript"
-  
-  "Cloud & DevOps":
-    - "Docker"
-    - "Kubernetes"
-  
-  "Databases":
-    - "PostgreSQL"
-    - "MongoDB"
-    - "Redis"
-    - "MySQL"
-    - "SQLite"
-  
-  "Operating Systems":
-    - "Linux"
-    - "Windows"
-    - "macOS"
-  
-  "Tools & Frameworks":
-    - "Git"
-    - "Django"
-    - "Node.js"
-    - "Spring"
-  
-  "Simulation & Research":
-    - "iFogSim"
-    - "CloudSim"
+  - name: "Cloud & DevOps"
+    icon: "fas fa-cloud"
+    skills:
+      - "Docker"
+      - "Kubernetes"
+      - "Git & GitHub"
+      - "Linux Administration"
+
+  - name: "Programming Languages"
+    icon: "fas fa-code"
+    skills:
+      - "Python"
+      - "Java"
+      - "C++"
+      - "RUST"
+      - "CUDA"
+
+  - name: "Backend & Web Technologies"
+    icon: "fas fa-server"
+    skills:
+      - "Django"
+      - "Spring Boot"
+      - "Node.js"
+      - "RESTful APIs"
+      - "Microservices"
+
+  - name: "Databases"
+    icon: "fas fa-database"
+    skills:
+      - "PostgreSQL"
+      - "MongoDB"
+      - "Redis"
+      - "MySQL"
+      - "SQLite"
+
+  - name: "Research & Simulation"
+    icon: "fas fa-flask"
+    skills:
+      - "CloudSim"
+      - "iFogSim"

@@ -2,11 +2,14 @@
     <div class="section-content">
         <h2 class="section-title">{{ .title }}</h2>
         
-        {{ range $category, $skills := .categories }}
+        {{ range .categories }}
         <div class="skills-category">
-            <h3 class="category-title">{{ $category }}</h3>
+            <h3 class="category-title">
+                {{ if .icon }}<i class="{{ .icon }}"></i>{{ end }}
+                {{ .name }}
+            </h3>
             <div class="skills-grid">
-                {{ range $skills }}
+                {{ range .skills }}
                 {{ if . }}
                 <div class="skill-badge">
                     <span>{{ . }}</span>
