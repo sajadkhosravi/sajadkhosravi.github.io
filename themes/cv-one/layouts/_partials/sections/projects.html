@@ -1,0 +1,44 @@
+{{- $d := .d -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body">
+      <ul class="cards" role="list">
+        {{- range $i, $p := $d.items }}
+        {{- $hasDetails := or .problem .approach .outcome .role }}
+        <li class="card{{ if $hasDetails }} card--wide{{ end }}">
+          <article>
+            <p class="card__meta mono">
+              {{- with .kind }}<span>{{ . }}</span>{{ end }}
+              {{- with .period }}<span>{{ . }}</span>{{ end -}}
+            </p>
+            <h3 class="card__title">{{ .title }}</h3>
+            <p class="card__summary">{{ .summary }}</p>
+            {{- if $hasDetails }}
+            <dl class="card__details">
+              {{- with .problem }}<div><dt class="mono">Problem</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{- with .approach }}<div><dt class="mono">Approach</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{- with .outcome }}<div><dt class="mono">Outcome</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{- with .role }}<div><dt class="mono">My role</dt><dd>{{ . }}</dd></div>{{ end }}
+            </dl>
+            {{- end }}
+            {{- with .tags }}
+            <ul class="tags" role="list" aria-label="Topics and technologies">
+              {{- range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+            {{- end }}
+            {{- with .links }}
+            <p class="card__links">
+              {{- range . }}
+              {{- $internal := hasPrefix .url "#" }}
+              <a class="link-arrow" href="{{ .url }}">{{ .label }}{{ if not $internal }}{{ partial "icon.html" "arrow-up-right" }}{{ end }}</a>
+              {{- end }}
+            </p>
+            {{- end }}
+          </article>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>

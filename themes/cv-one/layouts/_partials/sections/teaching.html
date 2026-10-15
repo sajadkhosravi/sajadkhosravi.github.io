@@ -1,0 +1,27 @@
+{{- $d := .d -}}
+{{- $institutions := slice -}}
+{{- $hasCodes := where $d.items "code" "!=" nil -}}
+{{- range $d.items }}{{ if not (in $institutions .institution) }}{{ $institutions = $institutions | append .institution }}{{ end }}{{ end -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body">
+      {{- with $d.role }}
+      <p class="section__lede">{{ . }} for {{ len $d.items }} courses at {{ len $institutions }} {{ cond (eq (len $institutions) 1) "university" "universities" }}.</p>
+      {{- end }}
+      {{- range $institutions }}
+      <div class="course-group">
+        <h3 class="label mono">{{ . }}</h3>
+        <ul class="courses" role="list">
+          {{- range where $d.items "institution" . }}
+          <li>
+            <span class="courses__name">{{ if $hasCodes }}<span class="courses__code mono">{{ .code }}</span>{{ end }}{{ .course }}</span>
+            <span class="courses__period mono">{{ .period }}</span>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>

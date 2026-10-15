@@ -1,0 +1,41 @@
+# "Selected work" — the most important section for recruiters.
+#
+# The entries below are your research projects, written only from facts already
+# on this site (paper titles, thesis topics). Please review the wording, and add
+# software projects with public repositories at the TOP of the list — those are
+# what engineering hiring managers look for first.
+#
+# Fields (only title + summary are required):
+#   title, kind (short label, e.g. "Open source", "PhD research"), period,
+#   summary   – one or two sentences: what it is and why it matters
+#   problem / approach / outcome – optional short lines, shown as a list
+#   role      – your individual contribution
+#   tags      – technologies or topics (rendered as small labels)
+#   links     – list of { label, url }   e.g. Code, Demo, Paper, Docs
+weight: 25
+id: "projects"
+enable: true
+nav: "Projects"
+title: "Projects"
+items:
+  - title: "Adaptive software for the edge–cloud continuum"
+    kind: "PhD project"
+    period: "2022 – present"
+    summary: "How do you split parallel work across small edge devices and large cloud servers so it finishes on time without burning extra energy? That question drives my PhD at Linköping University."
+    problem: "Edge devices and cloud servers differ a lot in speed and energy cost, so where a job runs makes a real difference to how fast it is and how much power it uses."
+    approach: "Scheduling streaming jobs that can run on a flexible number of cores, and tuning CPU clock speeds (DVFS) on mixed multicore processors to save energy."
+    tags: ["Scheduling", "Performance", "Energy efficiency", "Parallel computing", "DVFS", "Edge–cloud"]
+    links:
+      - label: "Publications"
+        url: "https://orcid.org/0009-0000-7882-5481"
+
+  - title: "Machine-learning-based computation offloading"
+    kind: "MSc thesis"
+    period: "2018 – 2022"
+    summary: "My master's thesis at Ferdowsi University of Mashhad: using machine learning to decide which tasks a device should hand off to a nearby edge server instead of running itself."
+    tags: ["Edge computing", "Machine learning", "Offloading"]
+  - title: "Healthcare IoT devices and applications"
+    kind: "BSc project"
+    period: "2018"
+    summary: "My bachelor's final project, looking at Internet-of-Things devices and apps for healthcare."
+    tags: ["IoT", "Healthcare"]

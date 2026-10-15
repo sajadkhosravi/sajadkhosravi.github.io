@@ -1,0 +1,25 @@
+{{- /* Chronological list. Context: dict "items" "title" (key for heading) "sub" (key for org). */ -}}
+<ol class="timeline" role="list">
+  {{- range .items }}
+  <li class="timeline__item">
+    <p class="timeline__period mono">{{ .period }}</p>
+    <div class="timeline__body">
+      <h3 class="timeline__title">{{ or .title .degree }}</h3>
+      <p class="timeline__org">{{ or .organization .institution }}{{ with .location }}<span class="sep" aria-hidden="true"> · </span><span class="muted">{{ . }}</span>{{ end }}</p>
+      {{- with .description }}<p class="timeline__desc">{{ . }}</p>{{ end }}
+      {{- if or .thesis .project .supervisor }}
+      <dl class="pairs pairs--inline">
+        {{- with .thesis }}<div><dt>Thesis</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{- with .project }}<div><dt>Final project</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{- with .supervisor }}<div><dt>Supervisor</dt><dd>{{ . }}</dd></div>{{ end }}
+      </dl>
+      {{- end }}
+      {{- with .highlights }}
+      <ul class="timeline__highlights">
+        {{- range . }}<li>{{ . | markdownify }}</li>{{ end }}
+      </ul>
+      {{- end }}
+    </div>
+  </li>
+  {{- end }}
+</ol>

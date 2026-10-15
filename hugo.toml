@@ -3,92 +3,36 @@ languageCode = 'en-us'
 title = 'Sajad Khosravi'
 theme = 'cv-one'
 
+# The site is a single page built from data/homepage/*.yaml.
+# Taxonomies and RSS are not used.
+disableKinds = ['taxonomy', 'term', 'rss']
+enableRobotsTXT = false  # static/robots.txt is used instead
+
 [params]
-  description = "PhD in Edge/Cloud Computing"
+  # Used for <title>, meta description and social previews.
+  seo_title = "Sajad Khosravi — Distributed Systems & Cloud Engineer"
+  description = "Distributed systems and cloud engineer with industry experience, now doing a PhD at Linköping University on distributed systems, cloud computing and efficient scheduling across edge and cloud. Based in Linköping, Sweden."
   author = "Sajad Khosravi"
-  email = "sajad.khosravi@liu.se"
-  location = "Sweden"
-  linkedin = "https://www.linkedin.com/in/sajadkhosravi/"
-  github = "https://github.com/sajadkhosravi"
-  scholar = "https://scholar.google.com/citations?user=fRmGZrUAAAAJ&hl=en&oi=ao"
-  
-  # Theme settings
-  dark_mode = true
-  terminal_style = true
-  show_photo = true
-  photo_path = "images/sajad.png"
-  
-  # Navigation
-  show_nav = true
-  nav_style = "fixed"
-  nav_show_name = false  # Hide name in navbar
-  
-  # Social links - fully configurable
-  [params.social]
-    github = "https://github.com/sajadkhosravi"
-    linkedin = "https://linkedin.com/in/sajadkhosravi"
-    scholar = "https://scholar.google.com/citations?user=yourid"
-    email = "mailto:sajad.khosravi@liu.se"
-  
-  # Section visibility controls
-  # [params.sections]
-  # Configured in data/homepage/*.yaml directly via 'enable' field
-  
-  # Print functionality
-  [params.print]
-    enabled = false
-    button_text = "Download PDF"
-    button_icon = "fas fa-download"
-    generate_pdf = true
-    pdf_filename = "cv.pdf"
-  
-  # Download CV functionality
-  [params.download_cv]
-    enabled = false
-    button_text = "Download CV"
-    pdf_path = "/papers/cv.pdf"
-    show_in_navbar = false
-  
-  # Navigation settings
-  [params.navigation]
-    highlight_active = true
-    smooth_scroll = true
 
-[menu]
-  [[menu.main]]
-    name = "About"
-    url = "#about"
-    weight = 1
-  [[menu.main]]
-    name = "Research"
-    url = "#research"
-    weight = 2
-  [[menu.main]]
-    name = "Experience"
-    url = "#experience"
-    weight = 3
-  [[menu.main]]
-    name = "Education"
-    url = "#education"
-    weight = 4
-  [[menu.main]]
-    name = "Publications"
-    url = "#publications"
-    weight = 5
-  [[menu.main]]
-    name = "Skills"
-    url = "#skills"
-    weight = 6
-  [[menu.main]]
-    name = "Volunteer"
-    url = "#volunteer"
-    weight = 7
-  [[menu.main]]
-    name = "Languages"
-    url = "#languages"
-    weight = 8
+  # Portrait, relative to assets/. Hugo resizes it to WebP/JPEG at build time.
+  photo = "images/profileimage.jpg"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  # Résumé button (hero + contact). static/papers/cv.pdf is currently a
+  # placeholder: replace it with your real résumé, then set enabled = true.
+  [params.resume]
+    enabled = false
+    label = "Résumé (PDF)"
+    path = "papers/cv.pdf"
+
+  # Shown in the footer as a "source" link. Remove to hide.
+  source = "https://github.com/sajadkhosravi/sajadkhosravi.github.io"
+
+[sitemap]
+  changeFreq = 'monthly'
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[imaging]
+  quality = 82
+  resampleFilter = 'Lanczos'

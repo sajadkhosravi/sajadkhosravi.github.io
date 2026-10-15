@@ -1,0 +1,5 @@
+{{- /* Section heading with index number. Context: dict "id" "title" "n". */ -}}
+<header class="section__head">
+  <span class="section__num mono" aria-hidden="true">{{ printf "%02d" .n }}</span>
+  <h2 class="section__title" id="{{ .id }}-title">{{ .title }}</h2>
+</header>

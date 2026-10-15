@@ -1,0 +1,8 @@
+# Closing section. Email, location and profile links come from about.yaml.
+weight: 90
+id: "contact"
+enable: false
+nav: "Contact"
+title: "Contact"
+heading: "Let's talk."
+text: "I'm looking for software engineering roles, especially in distributed systems and cloud infrastructure. If you think I could be a good fit for your team, send me an email — I'd be happy to talk."

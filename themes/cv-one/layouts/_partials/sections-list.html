@@ -1,0 +1,13 @@
+{{- /*
+  Returns the homepage sections to render, in weight order: every
+  data/homepage/*.yaml file with enable: true, that is not embedded in another
+  section and that has content. Used by the page body and the navigation so
+  they always agree. (about.yaml also feeds the hero, which is always shown.)
+*/ -}}
+{{- $sections := slice -}}
+{{- range sort site.Data.homepage "weight" -}}
+  {{- if and .enable (not .embedded) (or .items .categories .text .bio) -}}
+    {{- $sections = $sections | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $sections -}}

@@ -1,25 +1,47 @@
-weight: 10
+# Hero + "About" section. Also the source for contact details used site-wide.
+# The hero is always shown at the top; `weight` positions the About section.
+weight: 35
 id: "about"
 enable: true
+nav: "About"
+title: "About"
+
 personal:
   name: "Sajad Khosravi"
-  title: "PhD Student in Edge/Cloud Computing"
-  # email: "sajad.khosravi@liu.se"
+  # Short professional identity shown under the name.
+  title: "Distributed Systems & Cloud Engineer"
+  # One line shown in the hero eyebrow.
+  email: "sajad.khosravi@liu.se"
   location: "Linköping, Sweden"
+  # Shorter location shown under the title in the hero.
+  location_short: "Sweden"
   # phone: "+46"
-  # website: "https://sajadkhosravi.github.io"
-  summary: "I am a PhD student at Linköping University, Sweden, working on adaptive software for the Edge-Cloud Continuum. My research focuses on Edge Computing, Cloud Computing, and Distributed Systems. I am particularly interested in how software can adapt dynamically to the unique challenges of edge and cloud infrastructures, enabling better performance, resource optimization, and scalability."
+  summary: "I'm a software engineer who likes building systems that run across many machines. I spent several years writing production software in industry, and I'm now doing a PhD at Linköping University on how to share computing work efficiently between edge devices and the cloud."
 
+# Optional main button in the hero, shown before the email/phone buttons.
+# cta:
+#   label: "View experience"
+#   href: "#experience"
+
+# Key facts shown next to the portrait. Keep them short and verifiable.
+facts: []
+
+# Paragraphs for the About section (Markdown allowed).
+bio:
+  - "I'm a software engineer, and the problems I enjoy most involve lots of machines working together: splitting up the work, sharing resources sensibly, and keeping things fast without wasting compute or energy."
+  - "I started out in industry. From 2018 to 2022 I worked as a software engineer at a few companies in Mashhad, Iran, building and shipping production software, and I finished my MSc in software engineering along the way."
+  - "In December 2022 I started a PhD at Linköping University. My research is about scheduling — deciding where and how parallel jobs should run when the hardware is a mix of small edge devices, multicore processors and cloud servers. It has taught me a lot about parallel programming, performance, and the trade-off between speed and energy. I also help teach courses on multicore and GPU programming and on software design."
+  - "Now I'd like to take that mix of industry experience and systems know-how back into an engineering team working on **distributed systems or cloud infrastructure**."
 social_links:
   - name: "GitHub"
     url: "https://github.com/sajadkhosravi"
-    icon: "fab fa-github"
+    icon: "github"
+    handle: "sajadkhosravi"
   - name: "LinkedIn"
-    url: "https://linkedin.com/in/sajadkhosravi"
-    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/sajadkhosravi/"
+    icon: "linkedin"
+    handle: "in/sajadkhosravi"
   # - name: "Google Scholar"
-  #   url: "https://scholar.google.com/citations?user=fRmGZrUAAAAJ&hl=en&oi=ao"
-  #   icon: "fas fa-graduation-cap"
-  - name: "Email"
-    url: "mailto:sajad.khosravi@liu.se"
-    icon: "fas fa-envelope"
+  #   url: "https://scholar.google.com/citations?user=fRmGZrUAAAAJ"
+  #   icon: "scholar"
+  #   handle: "Google Scholar"

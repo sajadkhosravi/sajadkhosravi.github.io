@@ -1,0 +1,37 @@
+{{- $d := .d -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body about">
+      <div class="about__bio prose">
+        {{- range $d.bio }}
+        <p>{{ . | markdownify }}</p>
+        {{- end }}
+      </div>
+      <aside class="about__side">
+        <figure class="figure">
+          {{ partial "continuum.html" . }}
+          <figcaption>My PhD looks at work spread across small devices, <em>edge nodes and cloud servers</em> — and how to decide what runs where when each has a different speed and energy cost.</figcaption>
+        </figure>
+        {{- with site.Data.homepage.research }}{{ if and .enable .items }}
+        <div class="about__block">
+          <h3 class="label mono">{{ .title }}</h3>
+          <ul class="plain-list" role="list">
+            {{- range .items }}<li>{{ .name }}</li>{{ end }}
+          </ul>
+        </div>
+        {{- end }}{{ end }}
+        {{- with site.Data.homepage.languages }}{{ if and .enable .items }}
+        <div class="about__block">
+          <h3 class="label mono">{{ .title }}</h3>
+          <dl class="pairs">
+            {{- range .items }}
+            <div><dt>{{ .language }}</dt><dd>{{ .proficiency }}</dd></div>
+            {{- end }}
+          </dl>
+        </div>
+        {{- end }}{{ end }}
+      </aside>
+    </div>
+  </div>
+</section>

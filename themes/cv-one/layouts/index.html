@@ -1,9 +1,6 @@
 {{ define "main" }}
-<article class="cv-container">
-    {{ range sort site.Data.homepage "weight" }}
-        {{ if .enable }}
-            {{ partial (printf "sections/%s.html" .id) . }}
-        {{ end }}
-    {{ end }}
-</article>
+  {{- with site.Data.homepage.about }}{{ partial "hero.html" . }}{{ end }}
+  {{- range $i, $s := partialCached "sections-list.html" . }}
+    {{- partial (printf "sections/%s.html" $s.id) (dict "d" $s "n" (add $i 1)) }}
+  {{- end }}
 {{ end }}

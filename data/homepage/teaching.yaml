@@ -1,44 +1,41 @@
-weight: 80
+weight: 50
 id: "teaching"
 enable: true
-title: "Teaching Experience"
+title: "Teaching"
+# Shown once above the list; every entry below has this role.
+role: "Teaching Assistant"
 items:
-  - course: "TDDE45: Software Design and Construction"
-    institution: "Linköping University, Sweden"
-    period: "Sep 2023, Present"
-    role: "Teaching Assistant"
-      
-  - course: "TDDD56: Multicore and GPU Programming"
-    institution: "Linköping University, Sweden"
-    period: "Nov 2023, Present"
-    role: "Teaching Assistant"
-       
-  - course: "TDDE65: Programming of parallel computers - methods and tools"
-    institution: "Linköping University, Sweden"
-    period: "Apr 2024, Present"
-    role: "Teaching Assistant"
-           
+  - course: "Software Design and Construction"
+    code: "TDDE45"
+    institution: "Linköping University"
+    period: "Sep 2023 – Present"
+
+  - course: "Multicore and GPU Programming"
+    code: "TDDD56"
+    institution: "Linköping University"
+    period: "Nov 2023 – Present"
+
+  - course: "Programming of Parallel Computers — Methods and Tools"
+    code: "TDDE65"
+    institution: "Linköping University"
+    period: "Apr 2024 – Present"
+
   - course: "Cloud Computing"
-    institution: "Ferdowsi University of Mashhad, Iran"
-    period: "Sep 2020, Sep2021"
-    role: "Teaching Assistant"
-       
-  - course: "Theory of Languages and Machines "
-    institution: "Ferdowsi University of Mashhad, Iran"
-    period: "Jan 2019, Sep 2019"
-    role: "Teaching Assistant"
-  
+    institution: "Ferdowsi University of Mashhad"
+    period: "Sep 2020 – Sep 2021"
+
+  - course: "Theory of Languages and Machines"
+    institution: "Ferdowsi University of Mashhad"
+    period: "Jan 2019 – Sep 2019"
+
   - course: "Computer Architecture"
-    institution: "Ferdowsi University of Mashhad, Iran"
-    period: "Sep 2016, Sep 2017"
-    role: "Teaching Assistant"
+    institution: "Ferdowsi University of Mashhad"
+    period: "Sep 2016 – Sep 2017"
 
   - course: "Engineering Mathematics"
-    institution: "Ferdowsi University of Mashhad, Iran"
-    period: "Sep 2016, Sep 2017"
-    role: "Teaching Assistant"
+    institution: "Ferdowsi University of Mashhad"
+    period: "Sep 2016 – Sep 2017"
 
   - course: "Discrete Mathematics"
-    institution: "Ferdowsi University of Mashhad, Iran"
-    period: "Sep 2015, Sep 2016"
-    role: "Teaching Assistant"
+    institution: "Ferdowsi University of Mashhad"
+    period: "Sep 2015 – Sep 2016"

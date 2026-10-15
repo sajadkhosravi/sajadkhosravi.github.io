@@ -1,0 +1,31 @@
+{{- $d := .d -}}
+{{- $about := site.Data.homepage.about -}}
+{{- $p := $about.personal -}}
+<section class="section section--contact" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body contact">
+      {{- with $d.heading }}<p class="contact__heading">{{ . }}</p>{{ end }}
+      {{- with $d.text }}<p class="contact__text">{{ . }}</p>{{ end }}
+      {{- with $p.email }}
+      <div class="contact__email">
+        <a href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>{{ . }}</span></a>
+        <button class="copy-btn" type="button" data-copy="{{ . }}" hidden>
+          {{ partial "icon.html" "copy" }}<span data-copy-label>Copy</span>
+        </button>
+      </div>
+      {{- end }}
+      <ul class="contact__links" role="list">
+        {{- range $about.social_links }}
+        <li><a href="{{ .url }}">{{ partial "icon.html" .icon }}<span>{{ .name }}</span>{{ with .handle }}<span class="muted mono">{{ . }}</span>{{ end }}</a></li>
+        {{- end }}
+        {{- with site.Params.resume }}{{ if .enabled }}
+        <li><a href="{{ .path | relURL }}">{{ partial "icon.html" "doc" }}<span>{{ .label }}</span></a></li>
+        {{- end }}{{ end }}
+        {{- with $p.location }}
+        <li><span>{{ partial "icon.html" "pin" }}<span>{{ . }}</span></span></li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>

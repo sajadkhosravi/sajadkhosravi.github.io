@@ -1,0 +1,50 @@
+{{- $p := .personal -}}
+<section class="hero" aria-labelledby="hero-name">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      {{- with $p.focus }}
+      <p class="hero__eyebrow mono">{{ . }}</p>
+      {{- end }}
+      <h1 class="hero__name" id="hero-name">{{ $p.name }}</h1>
+      <p class="hero__role">{{ $p.title }}</p>
+      {{- with $p.location_short | default $p.location }}
+      <p class="hero__location">{{ partial "icon.html" "pin" }}{{ . }}</p>
+      {{- end }}
+      <p class="hero__summary">{{ $p.summary }}</p>
+
+      <div class="hero__actions">
+        {{- with .cta }}
+        <a class="btn btn--primary" href="{{ .href }}">{{ .label }} {{ partial "icon.html" "arrow-right" }}</a>
+        {{- end }}
+        {{- with $p.phone }}
+        <a class="btn" href="tel:{{ replaceRE `[^+0-9]` `` . }}">{{ partial "icon.html" "phone" }} {{ . }}</a>
+        {{- end }}
+        {{- range .social_links }}
+        <a class="btn" href="{{ .url }}" rel="me">{{ partial "icon.html" .icon }} {{ .name }}</a>
+        {{- end }}
+        {{- with site.Params.resume }}{{ if .enabled }}
+        <a class="btn" href="{{ .path | relURL }}">{{ partial "icon.html" "download" }} {{ .label }}</a>
+        {{- end }}{{ end }}
+      </div>
+    </div>
+
+    <div class="hero__aside">
+      {{- with resources.Get site.Params.photo }}
+        {{- $sm := .Process "fill 320x320 webp Center" }}
+        {{- $lg := .Process "fill 640x640 webp Center" }}
+        {{- $fb := .Process "fill 640x640 jpg Center" }}
+      <picture class="portrait">
+        <source type="image/webp" srcset="{{ $sm.RelPermalink }} 320w, {{ $lg.RelPermalink }} 640w" sizes="(min-width: 60em) 18rem, 7.5rem">
+        <img src="{{ $fb.RelPermalink }}" width="640" height="640" alt="Portrait of {{ $p.name }}" fetchpriority="high" decoding="async">
+      </picture>
+      {{- end }}
+      {{- with .facts }}
+      <ul class="facts" role="list">
+        {{- range . }}
+        <li>{{ with .icon }}{{ partial "icon.html" . }}{{ end }}{{ .value }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+</section>

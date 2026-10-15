@@ -1,0 +1,20 @@
+{{- $d := .d -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body">
+      <dl class="skills">
+        {{- range $d.categories }}
+        <div class="skills__row">
+          <dt class="label mono">{{ .name }}</dt>
+          <dd>
+            <ul class="tags tags--lg" role="list">
+              {{- range .skills }}<li>{{ . }}</li>{{ end }}
+            </ul>
+          </dd>
+        </div>
+        {{- end }}
+      </dl>
+    </div>
+  </div>
+</section>

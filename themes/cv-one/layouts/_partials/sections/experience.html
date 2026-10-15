@@ -1,0 +1,9 @@
+{{- $d := .d -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body">
+      {{ partial "timeline.html" (dict "items" $d.items) }}
+    </div>
+  </div>
+</section>

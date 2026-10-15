@@ -1,9 +1,10 @@
-weight: 110
+weight: 120
 id: "languages"
 enable: true
+embedded: true   # rendered inside the About section, not on its own
 title: "Languages"
 items:
-  - language: "Persian (Farsi)"
+  - language: "Persian"
     proficiency: "Native"
   - language: "English"
     proficiency: "Fluent"

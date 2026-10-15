@@ -1,39 +1,39 @@
-weight: 30
+# Positions, newest first. Optional per item:
+#   description: one sentence on scope
+#   highlights:  list of concrete achievements (numbers, systems, results)
+weight: 15
 id: "experience"
 enable: true
-title: "Work Experience"
+nav: "Experience"
+title: "Experience"
 items:
-  - title: "PhD Student"
+  - title: "Doctoral Researcher — Distributed & Parallel Systems"
     organization: "Linköping University"
     location: "Linköping, Sweden"
-    period: "Dec 2022 - Present"
+    period: "Dec 2022 – Present"
+    description: "Working out how to schedule parallel workloads across edge devices, multicore CPUs and cloud servers so they run fast without wasting energy."
 
   - title: "Software Engineer"
     organization: "Part Company"
     location: "Mashhad, Iran"
-    period: "Jun 2022 - Oct 2022"
-    
+    period: "Jun 2022 – Oct 2022"
+
   - title: "Software Engineer"
     organization: "Paykan Company"
     location: "Mashhad, Iran"
-    period: "Oct 2021 - Oct 2022"
+    period: "Oct 2021 – Oct 2022"
 
   - title: "Software Engineer"
     organization: "Part Company"
     location: "Mashhad, Iran"
-    period: "Nov 2018 - Aug 2020"
-  
-  - title: "Software Engineer"
-    organization: "Cycass Company"
-    location: "Mashhad, Iran"
-    period: "Jun 2018 - Nov 2018"
+    period: "Nov 2018 – Aug 2020"
 
   - title: "Research Assistant"
     organization: "Ferdowsi University of Mashhad"
     location: "Mashhad, Iran"
-    period: "Sep 2018 - May 2022"
+    period: "Sep 2018 – May 2022"
 
-  # - title: "Managing editor of Escape scientific magazine"
-  #   organization: "Ferdowsi University of Mashhad"
-  #   location: "Mashhad, Iran"
-  #   period: "Jan 2016 - Jan 2018"
+  - title: "Software Engineer"
+    organization: "Cycass Company"
+    location: "Mashhad, Iran"
+    period: "Jun 2018 – Nov 2018"

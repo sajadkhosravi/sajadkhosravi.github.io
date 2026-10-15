@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.LanguageCode | default "en" }}">
 <head>
-  {{ partial "head.html" . }}
+  {{- partial "head.html" . }}
 </head>
-<body class="terminal-theme">
-  <div class="page-wrapper">
-
-    
-    <!-- Main content area -->
-    <main class="main-content" role="main">
-      {{ block "main" . }}{{ end }}
-    </main>
-    
-  </div>
-  
-  <!-- Scripts -->
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main" tabindex="-1">
+    {{- block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
   {{ partial "head/js.html" . }}
 </body>
 </html>

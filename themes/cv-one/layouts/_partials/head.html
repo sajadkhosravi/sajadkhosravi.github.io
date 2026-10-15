@@ -1,58 +1,64 @@
+{{- $about := site.Data.homepage.about -}}
+{{- $title := cond .IsHome (site.Params.seo_title | default site.Title) (printf "%s — %s" .Title site.Title) -}}
+{{- $desc := .Description | default site.Params.description -}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-{{- if .Site.Params.description }}
-<meta name="description" content="{{ .Site.Params.description }}">
-{{- end }}
-{{- if .Site.Params.author }}
-<meta name="author" content="{{ .Site.Params.author }}">
-{{- end }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ site.Params.author }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101314" media="(prefers-color-scheme: dark)">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png?v=5">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5">
-<link rel="icon" type="image/x-icon" href="/favicon.ico?v=5">
-<link rel="apple-touch-icon" href="/favicon.png?v=5">
-<link rel="shortcut icon" href="/favicon.png?v=5">
+{{- /* Apply a saved theme before first paint to avoid a flash. */}}
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-<!-- CSS -->
+<link rel="preload" href="{{ "fonts/ibm-plex-sans-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/ibm-plex-sans-latin-600-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{ partial "head/css.html" . }}
 
-<!-- Title -->
-<title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="32x32">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 
-<!-- Open Graph -->
-{{- if .Site.Params.description }}
-<meta property="og:description" content="{{ .Site.Params.description }}">
-{{- end }}
-<meta property="og:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
-<meta property="og:type" content="website">
+{{- $image := "" }}
+{{- with resources.Get site.Params.photo }}{{ $image = (.Process "fill 600x600 jpg Center").Permalink }}{{ end }}
+<meta property="og:type" content="{{ cond .IsHome "profile" "website" }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
-{{- if .Site.Params.description }}
-<meta name="twitter:description" content="{{ .Site.Params.description }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+{{- with $image }}
+<meta property="og:image" content="{{ . }}">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="Portrait of {{ site.Params.author }}">
 {{- end }}
+<meta name="twitter:card" content="summary">
 
-<!-- Canonical URL -->
-<link rel="canonical" href="{{ .Permalink }}">
-
-<!-- RSS -->
-{{ range .AlternativeOutputFormats -}}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-{{ end -}}
-
-<!-- JSON Feed -->
-{{ if .OutputFormats.Get "json" -}}
-<link rel="alternate" type="application/json" title="{{ .Site.Title }}" href="{{ .OutputFormats.Get "json" | relURL }}">
-{{ end -}}
+{{- if and .IsHome $about }}
+{{- $p := $about.personal }}
+{{- $sameAs := slice }}
+{{- range $about.social_links }}{{ if hasPrefix .url "http" }}{{ $sameAs = $sameAs | append .url }}{{ end }}{{ end }}
+{{- $person := dict "@context" "https://schema.org" "@type" "Person" "name" $p.name "jobTitle" $p.title "url" site.BaseURL "sameAs" $sameAs }}
+{{- with $p.email }}{{ $person = merge $person (dict "email" (printf "mailto:%s" .)) }}{{ end }}
+{{- with $image }}{{ $person = merge $person (dict "image" .) }}{{ end }}
+{{- with $p.location }}{{ $person = merge $person (dict "homeLocation" (dict "@type" "Place" "name" .)) }}{{ end }}
+{{- with site.Data.homepage.education }}
+  {{- $alumni := slice }}{{ $current := "" }}
+  {{- range .items }}
+    {{- if in .period "Present" }}{{ $current = .institution }}{{ else if not (in $alumni .institution) }}{{ $alumni = $alumni | append .institution }}{{ end }}
+  {{- end }}
+  {{- with $current }}{{ $person = merge $person (dict "affiliation" (dict "@type" "CollegeOrUniversity" "name" .)) }}{{ end }}
+  {{- with $alumni }}
+    {{- $list := slice }}{{ range . }}{{ $list = $list | append (dict "@type" "CollegeOrUniversity" "name" .) }}{{ end }}
+    {{- $person = merge $person (dict "alumniOf" $list) }}
+  {{- end }}
+{{- end }}
+{{- with site.Data.homepage.research.items }}
+  {{- $topics := slice }}{{ range . }}{{ $topics = $topics | append .name }}{{ end }}
+  {{- $person = merge $person (dict "knowsAbout" $topics) }}
+{{- end }}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>
+{{- end }}

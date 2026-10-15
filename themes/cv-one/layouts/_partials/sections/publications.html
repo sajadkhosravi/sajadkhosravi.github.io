@@ -1,0 +1,32 @@
+{{- $d := .d -}}
+<section class="section" id="{{ $d.id }}" aria-labelledby="{{ $d.id }}-title">
+  <div class="wrap section__grid">
+    {{ partial "section-head.html" (dict "id" $d.id "title" $d.title "n" .n) }}
+    <div class="section__body">
+      <ol class="pubs" role="list">
+        {{- range $d.items }}
+        <li class="pub">
+          <p class="pub__year mono">{{ .year }}</p>
+          <div>
+            <h3 class="pub__title">
+              {{- with .doi }}<a href="https://doi.org/{{ . }}">{{ end }}{{ .title }}{{ with .doi }}</a>{{ end -}}
+            </h3>
+            <p class="pub__authors">
+              {{- range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if eq $a $d.self }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}{{ end -}}
+            </p>
+            <p class="pub__venue">{{ with .type }}<span class="badge mono">{{ . }}</span> {{ end }}<em>{{ .venue }}</em></p>
+            {{- if or .doi .pdf .code .url }}
+            <p class="pub__links">
+              {{- with .doi }}<a class="link-arrow" href="https://doi.org/{{ . }}">DOI {{ partial "icon.html" "arrow-up-right" }}</a>{{ end }}
+              {{- with .pdf }}<a class="link-arrow" href="{{ . | relURL }}">PDF {{ partial "icon.html" "arrow-up-right" }}</a>{{ end }}
+              {{- with .code }}<a class="link-arrow" href="{{ . }}">Code {{ partial "icon.html" "arrow-up-right" }}</a>{{ end }}
+              {{- with .url }}<a class="link-arrow" href="{{ . }}">Link {{ partial "icon.html" "arrow-up-right" }}</a>{{ end }}
+            </p>
+            {{- end }}
+          </div>
+        </li>
+        {{- end }}
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,45 +1,17 @@
-weight: 60
+# Grouped by area. List only what you can discuss confidently in an interview.
+weight: 20
 id: "skills"
 enable: true
-title: "Skills & Expertise"
+nav: "Skills"
+title: "Skills"
 categories:
+  - name: "Languages"
+    skills: ["Python", "Java", "C++", "Rust", "CUDA"]
+  - name: "Frameworks & APIs"
+    skills: ["Django", "Spring Boot", "Node.js", "REST APIs"]
   - name: "Cloud & DevOps"
-    icon: "fas fa-cloud"
-    skills:
-      - "Docker"
-      - "Kubernetes"
-      - "Git & GitHub"
-      - "Linux Administration"
-
-  - name: "Programming Languages"
-    icon: "fas fa-code"
-    skills:
-      - "Python"
-      - "Java"
-      - "C++"
-      - "RUST"
-      - "CUDA"
-
-  - name: "Backend & Web Technologies"
-    icon: "fas fa-server"
-    skills:
-      - "Django"
-      - "Spring Boot"
-      - "Node.js"
-      - "RESTful APIs"
-      - "Microservices"
-
-  - name: "Databases"
-    icon: "fas fa-database"
-    skills:
-      - "PostgreSQL"
-      - "MongoDB"
-      - "Redis"
-      - "MySQL"
-      - "SQLite"
-
-  - name: "Research & Simulation"
-    icon: "fas fa-flask"
-    skills:
-      - "CloudSim"
-      - "iFogSim"
+    skills: ["Docker", "Kubernetes", "Linux administration", "Git & GitHub"]
+  - name: "Database"
+    skills: ["PostgreSQL", "MySQL", "SQLite", "MongoDB", "Redis"]
+  - name: "Simulation"
+    skills: ["CloudSim", "iFogSim"]

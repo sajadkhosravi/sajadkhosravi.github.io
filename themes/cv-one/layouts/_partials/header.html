@@ -1,36 +1,23 @@
-{{ if .Site.Params.show_nav }}
-<nav class="nav">
-    <div class="nav-container">
-        
-        <div class="nav-menu" id="nav-menu">
-            {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <div class="nav-dropdown">
-                <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-                <div class="nav-dropdown-content">
-                    {{ range .Children }}
-                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-                    {{ end }}
-                </div>
-            </div>
-            {{ else }}
-            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-            {{ end }}
-            {{ end }}
-            
-            {{ if .Site.Params.download_cv.enabled }}
-            <a href="{{ .Site.Params.download_cv.pdf_path | default "/cv.pdf" }}" class="nav-link download-cv" download>
-                <i class="fas fa-download"></i>
-                {{ .Site.Params.download_cv.button_text | default "Download CV" }}
-            </a>
-            {{ end }}
-        </div>
-        
-        <div class="nav-toggle" id="nav-toggle">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </div>
-    </div>
-</nav>
-{{ end }}
+{{- $about := site.Data.homepage.about -}}
+{{- $home := cond .IsHome "" ("/" | relURL) -}}
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{ $home }}#top">
+      <span class="brand__mark" aria-hidden="true">sk</span>
+      <span class="brand__name">{{ $about.personal.name }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <ul class="site-nav__list" role="list">
+        {{- range $s := partialCached "sections-list.html" . }}
+        {{- with $s.nav }}
+        <li><a class="site-nav__link" href="{{ $home }}#{{ $s.id }}" data-nav>{{ . }}</a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark theme">
+      <span class="theme-toggle__to-dark">{{ partial "icon.html" "moon" }}</span>
+      <span class="theme-toggle__to-light">{{ partial "icon.html" "sun" }}</span>
+    </button>
+  </div>
+</header>
