@@ -3,7 +3,14 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="{{ $home }}#top">
-      <span class="brand__mark" aria-hidden="true">sk</span>
+      <span class="brand__mark" aria-hidden="true">
+        {{- /* "K" drawn as a small network: a scheduler hub fanning work out to nodes. Same mark as static/favicon.svg. */ -}}
+        <svg viewBox="0 0 64 64" width="32" height="32" focusable="false">
+          <path d="M22 16v32M22 32 43 18M22 32 43 46" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <g fill="currentColor"><circle cx="22" cy="16" r="4"/><circle cx="22" cy="48" r="4"/><circle cx="43" cy="18" r="4"/><circle cx="43" cy="46" r="4"/></g>
+          <circle class="brand__hub" cx="22" cy="32" r="5.5"/>
+        </svg>
+      </span>
       <span class="brand__name">{{ $about.personal.name }}</span>
     </a>
     <nav class="site-nav" aria-label="Sections">

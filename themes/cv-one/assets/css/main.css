@@ -174,10 +174,11 @@ main:focus { outline: none; }
 }
 .brand:hover { color: var(--ink); }
 .brand__mark {
-  display: grid; place-items: center; width: 2rem; height: 2rem;
-  border-radius: var(--radius-sm); background: var(--ink); color: var(--bg);
-  font: 600 .875rem/1 var(--font-sans); letter-spacing: -.03em;
+  display: block; width: 2rem; height: 2rem; flex: none;
+  border-radius: calc(2rem * 14 / 64); background: var(--ink); color: var(--bg);
 }
+.brand__mark svg { display: block; width: 100%; height: 100%; }
+.brand__hub { fill: var(--accent); stroke: var(--ink); stroke-width: 2.5; }
 .site-nav__list { display: flex; gap: .25rem; }
 .site-nav__link {
   display: block; padding: .45rem .7rem; border-radius: var(--radius-sm);
